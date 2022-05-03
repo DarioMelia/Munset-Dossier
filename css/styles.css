@@ -90,23 +90,23 @@ div.bg--color {
   opacity: 1;
 }
 .menu-toggler:checked ~ ul .menu-item:nth-child(1) {
-  transform: rotate(0deg) translate(var(--menu-item-sep));
+  transform: rotate(18deg) translate(var(--menu-item-sep));
 }
 .menu-toggler:checked ~ ul .menu-item:nth-child(2) {
-  transform: rotate(60deg) translateX(var(--menu-item-sep));
+  transform: rotate(90deg) translateX(var(--menu-item-sep));
 }
 .menu-toggler:checked ~ ul .menu-item:nth-child(3) {
-  transform: rotate(120deg) translateX(var(--menu-item-sep));
+  transform: rotate(162deg) translateX(var(--menu-item-sep));
 }
 .menu-toggler:checked ~ ul .menu-item:nth-child(4) {
-  transform: rotate(180deg) translateX(var(--menu-item-sep));
+  transform: rotate(234deg) translateX(var(--menu-item-sep));
 }
 .menu-toggler:checked ~ ul .menu-item:nth-child(5) {
-  transform: rotate(240deg) translateX(var(--menu-item-sep));
+  transform: rotate(306deg) translateX(var(--menu-item-sep));
 }
-.menu-toggler:checked ~ ul .menu-item:nth-child(6) {
+/* .menu-toggler:checked ~ ul .menu-item:nth-child(6) {
   transform: rotate(300deg) translateX(var(--menu-item-sep));
-}
+} */
 .menu-toggler:checked ~ ul .menu-item a {
   pointer-events: auto;
 }
@@ -145,23 +145,23 @@ div.bg--color {
     top: -10px;
   } */
 .menu-item:nth-child(1) a {
-  transform: rotate(0deg);
+  transform: rotate(-18deg);
 }
 .menu-item:nth-child(2) a {
-  transform: rotate(-60deg);
+  transform: rotate(-90deg);
 }
 .menu-item:nth-child(3) a {
-  transform: rotate(-120deg);
+  transform: rotate(-162deg);
 }
 .menu-item:nth-child(4) a {
-  transform: rotate(-180deg);
+  transform: rotate(-234deg);
 }
 .menu-item:nth-child(5) a {
-  transform: rotate(-240deg);
+  transform: rotate(-306deg);
 }
-.menu-item:nth-child(6) a {
+/* .menu-item:nth-child(6) a {
   transform: rotate(-300deg);
-}
+} */
 .menu-item {
   position: absolute;
   display: block;
@@ -185,7 +185,10 @@ div.bg--color {
   border-radius: 50%;
   text-align: center;
   text-decoration: none;
-  font-size: 40px;
+  font-size: 1rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  
   pointer-events: none;
   transition: 230ms;
   z-index:20;
@@ -195,7 +198,7 @@ div.bg--color {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
   color: white;
   background: rgba(255, 255, 255, 0.3);
-  font-size: 44.44px;
+
   box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.86);
   z-index:50;
 }
