@@ -22,19 +22,19 @@ menuItems.forEach(item => {
 
 function changeBg(name){
     switch(name){
-        case "cuatro":
+        case "galeria":
             setAndResetBg("linear-gradient(to right, #45ffd7, #5757f4)")
             break
-        case "dos":
+        case "miembros":
             setAndResetBg("linear-gradient(to right, #f5c842, #fa6746) ")
             break
-        case "tres":
+        case "info":
             setAndResetBg("linear-gradient(to right, #a946fa, #fd7aff) ")
             break
-        case "uno":
+        case "escuchar":
             setAndResetBg("linear-gradient(to right, #38e05f, #38e0ca) ")
             break
-        case "cinco":
+        case "redes":
             setAndResetBg("linear-gradient(to right, #C13584, #ff1783) ")
             break
         case "seis":
