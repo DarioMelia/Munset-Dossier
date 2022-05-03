@@ -10,6 +10,7 @@
   --logo-size: 100px;
   --menu-item-size: 80px;
   --menu-item-sep: -110px;
+  --menu-item-fs: 2.5rem;
 }
 
 body {
@@ -185,7 +186,7 @@ div.bg--color {
   border-radius: 50%;
   text-align: center;
   text-decoration: none;
-  font-size: 3rem;
+  font-size: var(--menu-item-fs);
   pointer-events: none;
   transition: 230ms;
   z-index:20;
@@ -195,7 +196,7 @@ div.bg--color {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
   color: white;
   background: rgba(255, 255, 255, 0.3);
-
+  font-size: calc(var(--menu-item-fs) + 0.4rem);
   box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.86);
   z-index:50;
 }
@@ -205,6 +206,7 @@ div.bg--color {
     --logo-size: 80px;
     --menu-item-size: 60px;
     --menu-item-sep: -80px;
+    --menu-item-fs: 2rem;
    }
 }
 
@@ -213,6 +215,7 @@ div.bg--color {
     --logo-size: 120px;
     --menu-item-size: 100px;
     --menu-item-sep: -130px;
+    --menu-item-fs: 3rem;
    }
 }
 
