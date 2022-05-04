@@ -1,7 +1,7 @@
 const playBtn = document.getElementById("play-random")
 
-const dbf = new Audio("https://github.com/DarioMelia/Lissandra-Dossier/blob/main/js/songs/dbf.mp3?raw=true")
-const lu = new Audio("https://github.com/DarioMelia/Lissandra-Dossier/blob/main/js/songs/LU.mp3?raw=true")
+const dbf = new Audio("https://github.com/DarioMelia/Lissandra-Dossier/blob/main/js/audio/dbf.mp3?raw=true")
+const lu = new Audio("https://github.com/DarioMelia/Lissandra-Dossier/blob/main/js/audio/LU.mp3?raw=true")
 const audios = [dbf,lu]
 
 let isPlaying = false
