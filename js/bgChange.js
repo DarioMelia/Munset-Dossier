@@ -64,6 +64,7 @@ function setAndResetBg(value) {
   //             },500)
   //         },500)
 }
+
 let timer
 function openOverlay(sectionName) {
 if(timer) clearTimeout(timer)
