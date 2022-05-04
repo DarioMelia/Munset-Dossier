@@ -35,6 +35,11 @@
       grid-row: 9 / span 5;
       
     }
+
+
+    .random-btn{
+      top:5vh;
+    }
   }
   
   @media (min-width: 1200px) {
