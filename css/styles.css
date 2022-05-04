@@ -206,7 +206,7 @@ div.bg--color {
 /* %%%%%%%%%% OVERLAYS %%%%%%%%%%% */
 .section-overlay{
   width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   position:relative;
   z-index: -1;
   opacity:0;
@@ -218,12 +218,81 @@ div.bg--color {
   font-size: 3rem;
   text-align: center;
   color: white;
-  padding-top: 1.2em;
+  position: absolute;
+  padding-top: .7em;
 }
 
+/* MIEMBROS */
+.miembros__grid{
+  display:grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(20,5vh);
+}
 #miembros.open{
   opacity:1;
 }
+.miembro{
+  width:auto;
+  position: relative;
+  opacity: 0;
+}
+
+.miembro img{
+  width: 100%;
+  
+  
+}
+.miembro h3{
+  position: absolute;
+  opacity: 0;
+  top:0;
+}
+.miembro.diego{
+  grid-column: 3/span 5;
+  grid-row: 3 / span 8;
+  transform: translate(70%, 45%) scale(0.5);
+  
+}
+.miembro.diego img{
+  border-radius: 71% 29% 83% 17% / 12% 57% 43% 88% ;
+}
+.miembro.sara{
+  grid-column: 10 / span 5;
+  grid-row: 2 / span 6;
+  transform: translate(-70%, 90%) scale(0.5);
+}
+.miembro.sara img{
+  border-radius: 63% 37% 31% 69% / 61% 34% 66% 39% ;
+}
+.miembro.dario{
+  grid-column: 13 / span 3;
+  grid-row: 10 / span 11;
+  transform: translate(-180%, -40%) scale(0.5);
+}
+.miembro.dario img{
+  border-radius: 36% 46% 46% 53% / 49% 49% 39% 29%  ;
+}
+
+.miembro.fran{
+  grid-column: 2 / span 5;
+  grid-row: 11 / span 6;
+  transform: translate(70%, -45%) scale(0.5);
+}
+.miembro.fran img{
+  border-radius: 63% 37% 70% 30% / 37% 56% 44% 63%  ;
+}
+
+.miembro.jaime{
+  grid-column: 7 / span 6;
+  grid-row: 12 / span 5;
+  transform: translate(-20%, -45%) scale(0.5);
+}
+.miembro.jaime img{
+  border-radius: 53% 47% 43% 57% / 52% 28% 72% 48%;
+}
+
+
+
 
 
 @media (max-width: 340px){
@@ -245,6 +314,30 @@ div.bg--color {
 }
 
 
+@keyframes miembroImageAnimation {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+    transform: translate(0%,0%) scale(1)
+  }
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-12px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
 /* .bg-fade-animation{
   animation: bg-fade 1s ease-in-out forwards;
 }
