@@ -335,13 +335,17 @@ div.bg--color {
 }
 
 #play-random:hover .triangle {
+  
+}
+
+#play-random.playing .triangle {
   stroke-dashoffset: 0;
   opacity: 1;
   stroke: white;
   animation: nudge 0.7s ease-in-out;
 }
 
-#play-random:hover .circle {
+#play-random.playing .circle {
   stroke-dashoffset: 0;
   opacity: 1;
 }
@@ -352,6 +356,13 @@ div.bg--color {
   stroke-dashoffset: 650;
   -webkit-transition: all 0.5s ease-in-out;
   opacity: 0.3;
+}
+
+
+#audio-visualizer{
+  width:100%;
+  position:absolute;
+  bottom:0;
 }
 
 @keyframes miembroImageAnimation {
