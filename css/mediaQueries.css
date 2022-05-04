@@ -1,0 +1,70 @@
+@media (max-width: 340px) {
+    :root {
+      --logo-size: 80px;
+      --menu-item-size: 60px;
+      --menu-item-sep: -80px;
+      --menu-item-fs: 2rem;
+    }
+  }
+  @media (max-width: 600px){
+    .miembro img{
+      border-width: 6px;
+    }
+    .miembro.diego {
+      grid-column: 3 / span 8;
+      grid-row: 3 / span 8;
+      
+    }
+    .miembro.sara {
+      grid-column: 8 / span 8;
+      grid-row: 7 / span 4;
+      
+    }
+    .miembro.dario {
+      grid-column: 11 / span 5;
+      grid-row: 12 / span 11;
+      
+    }
+    .miembro.fran {
+      grid-column: 2 / span 8;
+      grid-row: 15 / span 6;
+      
+    }
+    .miembro.jaime {
+      grid-column: 2 / span 6;
+      grid-row: 9 / span 5;
+      
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    :root {
+      --logo-size: 120px;
+      --menu-item-size: 100px;
+      --menu-item-sep: -130px;
+      --menu-item-fs: 3rem;
+    }
+  
+    .miembro.diego {
+      grid-row: 3 / span 8;
+    }
+    .miembro.sara {
+      grid-row: 3 / span 6;
+    }
+  
+  
+  }
+  
+  @media (min-width: 1600px){
+    .miembro.dario {
+      grid-row: 9 / span 11;
+    }
+  
+    .miembro.fran {
+      grid-row: 11 / span 6;
+    }
+  
+    .miembro.jaime {
+      grid-row: 10 / span 5;
+    }
+  }

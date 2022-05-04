@@ -147,23 +147,23 @@ div.bg--color {
   } */
 .menu-item:nth-child(1) a {
   transform: rotate(-18deg);
-  background: linear-gradient(to right, #38e05f, #38e0ca) ;
+  background: linear-gradient(to right, #38e05ff5, #38e0caf5) ;
 }
 .menu-item:nth-child(2) a {
   transform: rotate(-90deg);
-  background: linear-gradient(to right, #f5c842d6, #fa6746d8);
+  background: linear-gradient(to right, #f5c842f4, #fa6746f3);
 }
 .menu-item:nth-child(3) a {
   transform: rotate(-162deg);
-  background: linear-gradient(to right, #a946fad5, #fd7affdf) ;
+  background: linear-gradient(to right, #a946faf8, #fd7afff4) ;
 }
 .menu-item:nth-child(4) a {
   transform: rotate(-234deg);
-  background:linear-gradient(to right, #45ffd7d0, #5757f4d6);
+  background:linear-gradient(to right, #45ffd7f9, #5757f4f3);
 }
 .menu-item:nth-child(5) a {
   transform: rotate(-306deg);
-  background: linear-gradient(to right, #c13584d7, #ff1783d7);
+  background: linear-gradient(to right, #c13584f7, #ff1783f4);
 }
 /* .menu-item:nth-child(6) a {
   transform: rotate(-300deg);
@@ -198,9 +198,10 @@ div.bg--color {
   position: relative;
 }
 .menu-item a:hover {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.563);
   color: white;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
   font-size: calc(var(--menu-item-fs) + 0.4rem);
   box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.86);
   z-index: 50;
@@ -283,7 +284,7 @@ div.bg--color {
 }
 .miembro.fran {
   grid-column: 2 / span 5;
-  grid-row: 12 / span 6;
+  grid-row: 13 / span 6;
   transform: translate(70%, -45%) scale(0.5);
 }
 .miembro.jaime {
@@ -292,76 +293,7 @@ div.bg--color {
   transform: translate(-20%, -45%) scale(0.5);
 }
 
-@media (max-width: 340px) {
-  :root {
-    --logo-size: 80px;
-    --menu-item-size: 60px;
-    --menu-item-sep: -80px;
-    --menu-item-fs: 2rem;
-  }
-}
-@media (max-width: 600px){
-  .miembro img{
-    border-width: 6px;
-  }
-  .miembro.diego {
-    grid-column: 3 / span 8;
-    grid-row: 3 / span 8;
-    
-  }
-  .miembro.sara {
-    grid-column: 8 / span 8;
-    grid-row: 7 / span 4;
-    
-  }
-  .miembro.dario {
-    grid-column: 11 / span 5;
-    grid-row: 11 / span 11;
-    
-  }
-  .miembro.fran {
-    grid-column: 2 / span 8;
-    grid-row: 16 / span 6;
-    
-  }
-  .miembro.jaime {
-    grid-column: 3 / span 6;
-    grid-row: 10 / span 5;
-    
-  }
-}
 
-@media (min-width: 1200px) {
-  :root {
-    --logo-size: 120px;
-    --menu-item-size: 100px;
-    --menu-item-sep: -130px;
-    --menu-item-fs: 3rem;
-  }
-
-  .miembro.diego {
-    grid-row: 3 / span 8;
-  }
-  .miembro.sara {
-    grid-row: 3 / span 6;
-  }
-
-
-}
-
-@media (min-width: 1600px){
-  .miembro.dario {
-    grid-row: 9 / span 11;
-  }
-
-  .miembro.fran {
-    grid-row: 11 / span 6;
-  }
-
-  .miembro.jaime {
-    grid-row: 10 / span 5;
-  }
-}
 
 @keyframes miembroImageAnimation {
   0% {
