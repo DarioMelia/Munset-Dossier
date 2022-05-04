@@ -82,11 +82,13 @@ function closeOpenOverlay() {
 function startMiembrosAnimation(){
   const miembros = document.querySelectorAll(".miembro")
   let delay = 0
+  let floatDelay = 0
   miembros.forEach(mi => {
     mi.style.animation = `miembroImageAnimation 1s ${delay}s ease-in-out forwards`
-    mi.querySelector("img").style.animation = `float 5s ${delay}s infinite`
+    mi.querySelector("img").style.animation = `float 5s ${floatDelay}s infinite`
     console.log(mi.querySelector("img"))
-    delay+= 0.4
+    delay+= 0.3
+    floatDelay+=1.2
   })
  
 

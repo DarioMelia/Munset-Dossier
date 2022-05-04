@@ -5,7 +5,7 @@
   margin: 0;
 }
 
-:root{
+:root {
   --bg-img: linear-gradient(to right, #b24592, #f15f79);
   --logo-size: 100px;
   --menu-item-size: 80px;
@@ -182,16 +182,15 @@ div.bg--color {
   height: inherit;
   line-height: var(--menu-item-size);
   color: rgba(255, 255, 255, 1);
-  background: rgba(230, 230, 250, 0.7);
+  background: rgba(230, 230, 250, 0.87);
   border-radius: 50%;
   text-align: center;
   text-decoration: none;
   font-size: var(--menu-item-fs);
   pointer-events: none;
   transition: 230ms;
-  z-index:20;
+  z-index: 20;
   position: relative;
-  
 }
 .menu-item a:hover {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
@@ -199,144 +198,189 @@ div.bg--color {
   background: rgba(255, 255, 255, 0.3);
   font-size: calc(var(--menu-item-fs) + 0.4rem);
   box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.86);
-  z-index:50;
+  z-index: 50;
 }
 
-
 /* %%%%%%%%%% OVERLAYS %%%%%%%%%%% */
-.section-overlay{
+.section-overlay {
   width: 100vw;
   max-height: 100vh;
-  position:relative;
+  position: relative;
   z-index: -1;
-  opacity:0;
-  background:transparent;
+  opacity: 0;
+  background: transparent;
   transition: opacity 250ms ease-out;
 }
 
-.section__title{
+.section__title {
   font-size: 3rem;
   text-align: center;
-  color: white;
+  display:none;
   position: absolute;
-  padding-top: .7em;
+  font-size: 4rem;
+  left: 20%;
+  z-index: 20;
+
+  padding-top: 0.2em;
+  font-family: "Ubuntu", sans-serif;
 }
 
 /* MIEMBROS */
-.miembros__grid{
-  display:grid;
+.miembros__grid {
+  display: grid;
   grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(20,5vh);
+  grid-template-rows: repeat(20, 5vh);
 }
-#miembros.open{
-  opacity:1;
+#miembros.open {
+  opacity: 1;
 }
-.miembro{
-  width:auto;
+.miembro {
+  width: auto;
   position: relative;
   opacity: 0;
 }
 
-.miembro img{
+.miembro img {
   width: 100%;
-  
-  
+  border: 12px solid rgb(250, 250, 250);
+  border-radius: 3px;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  position: relative;
 }
-.miembro h3{
+
+.miembro h3 {
   position: absolute;
-  opacity: 0;
-  top:0;
+  font-family: "Bangers", sans-serif;
+  color: white;
+  font-size: clamp(1rem,4vw,2.5rem);
+  text-align: center;
+  letter-spacing: 2px;
 }
-.miembro.diego{
-  grid-column: 3/span 5;
-  grid-row: 3 / span 8;
+.miembro.diego h3,
+.miembro.sara h3 {
+  top: -1.6em;
+  white-space: nowrap;
+}
+.miembro.diego {
+  grid-column: 3 / span 5;
+  grid-row: 5 / span 8;
   transform: translate(70%, 45%) scale(0.5);
-  
 }
-.miembro.diego img{
-  border-radius: 71% 29% 83% 17% / 12% 57% 43% 88% ;
-}
-.miembro.sara{
+.miembro.sara {
   grid-column: 10 / span 5;
-  grid-row: 2 / span 6;
+  grid-row: 5 / span 6;
   transform: translate(-70%, 90%) scale(0.5);
 }
-.miembro.sara img{
-  border-radius: 63% 37% 31% 69% / 61% 34% 66% 39% ;
-}
-.miembro.dario{
+.miembro.dario {
   grid-column: 13 / span 3;
-  grid-row: 10 / span 11;
+  grid-row: 11 / span 11;
   transform: translate(-180%, -40%) scale(0.5);
 }
-.miembro.dario img{
-  border-radius: 36% 46% 46% 53% / 49% 49% 39% 29%  ;
-}
-
-.miembro.fran{
+.miembro.fran {
   grid-column: 2 / span 5;
-  grid-row: 11 / span 6;
+  grid-row: 13 / span 6;
   transform: translate(70%, -45%) scale(0.5);
 }
-.miembro.fran img{
-  border-radius: 63% 37% 70% 30% / 37% 56% 44% 63%  ;
-}
-
-.miembro.jaime{
-  grid-column: 7 / span 6;
+.miembro.jaime {
+  grid-column: 8 / span 4;
   grid-row: 12 / span 5;
   transform: translate(-20%, -45%) scale(0.5);
 }
-.miembro.jaime img{
-  border-radius: 53% 47% 43% 57% / 52% 28% 72% 48%;
-}
 
-
-
-
-
-@media (max-width: 340px){
-  :root{
+@media (max-width: 340px) {
+  :root {
     --logo-size: 80px;
     --menu-item-size: 60px;
     --menu-item-sep: -80px;
     --menu-item-fs: 2rem;
-   }
+  }
+}
+@media (max-width: 600px){
+  .miembro img{
+    border-width: 6px;
+  }
+  .miembro.diego {
+    grid-column: 3 / span 8;
+    grid-row: 3 / span 8;
+    
+  }
+  .miembro.sara {
+    grid-column: 8 / span 8;
+    grid-row: 7 / span 4;
+    
+  }
+  .miembro.dario {
+    grid-column: 11 / span 5;
+    grid-row: 11 / span 11;
+    
+  }
+  .miembro.fran {
+    grid-column: 2 / span 8;
+    grid-row: 16 / span 6;
+    
+  }
+  .miembro.jaime {
+    grid-column: 3 / span 6;
+    grid-row: 10 / span 5;
+    
+  }
 }
 
-@media (min-width: 1200px){
-  :root{
+@media (min-width: 1200px) {
+  :root {
     --logo-size: 120px;
     --menu-item-size: 100px;
     --menu-item-sep: -130px;
     --menu-item-fs: 3rem;
-   }
+  }
+
+  .miembro.diego {
+    grid-row: 3 / span 8;
+  }
+  .miembro.sara {
+    grid-row: 3 / span 6;
+  }
+
+
 }
 
+@media (min-width: 1600px){
+  .miembro.dario {
+    grid-row: 9 / span 11;
+  }
+
+  .miembro.fran {
+    grid-row: 11 / span 6;
+  }
+
+  .miembro.jaime {
+    grid-row: 10 / span 5;
+  }
+}
 
 @keyframes miembroImageAnimation {
-  0%{
-    opacity:0;
+  0% {
+    opacity: 0;
   }
-  100%{
-    opacity:1;
-    transform: translate(0%,0%) scale(1)
+  100% {
+    opacity: 1;
+    transform: translate(0%, 0%) scale(1);
   }
 }
 
 @keyframes float {
-	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
-	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-		transform: translatey(-12px);
-	}
-	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-12px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
 }
 /* .bg-fade-animation{
   animation: bg-fade 1s ease-in-out forwards;
