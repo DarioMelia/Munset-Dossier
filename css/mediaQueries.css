@@ -5,6 +5,18 @@
       --menu-item-sep: -80px;
       --menu-item-fs: 2rem;
     }
+
+    div.escuchar__links{
+      height: 22vh;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 15vh;
+      text-align: center;
+    }
+    
+    .escuchar__links__container{
+     gap:1rem;
+    }
   }
   @media (max-width: 600px){
     .miembro img{
@@ -35,11 +47,21 @@
       grid-row: 9 / span 5;
       
     }
-
-
+     
+    /* %% ESCUCHAR %% */
     .random-btn{
-      top:5vh;
+      top:8vh;
     }
+
+    .escuchar__links{
+      align-self: flex-end;
+      height: 22vh;
+      gap: 10vw;
+      margin-bottom: 10vh;
+      text-align: center;
+    }
+    
+  
   }
   
   @media (min-width: 1200px) {
@@ -55,6 +77,12 @@
     }
     .miembro.sara {
       grid-row: 3 / span 6;
+    }
+
+    /* %% ESCUCHAR %% */
+
+    .escuchar__links{
+      gap: 45vw;
     }
   
   

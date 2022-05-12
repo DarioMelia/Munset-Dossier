@@ -217,6 +217,7 @@ div.bg--color {
   pointer-events: none;
   background: transparent;
   transition: opacity 250ms ease-out;
+  overflow: hidden;
 }
 
 .section-overlay.open {
@@ -310,7 +311,7 @@ div.bg--color {
 }
 .escuchar__container {
   width: 100%;
-  max-height: 100%;
+  height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -324,9 +325,9 @@ div.bg--color {
   top: 13vh;
   
 }
-
-
-
+.random-btn{
+  border-radius: 50%;
+}
 #play-random {
   color: white;
   border: none;
@@ -336,6 +337,7 @@ div.bg--color {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   cursor:pointer;
+  opacity: 0;
   transform: translateY(120%) scale(0.5);
 }
 
@@ -368,6 +370,42 @@ div.bg--color {
   transition: all 0.5s ease-in-out;
   opacity: 0.3;
 }
+
+.escuchar__links{
+  align-self: center;
+  display:flex;
+  height: 30vh;
+  gap: 30vw;
+  
+}
+
+.escuchar__links__container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.escuchar__links__container.left{
+  transform: translate(-250%,0%) scale(0.9);
+}
+.escuchar__links__container.right{
+  transform: translate(250%,0%) scale(0.9);
+}
+
+.escuchar__links a{
+  text-decoration: none;
+  color: white;
+  font-size: clamp(1.3rem, 4vw , 2rem);
+  font-family: "Ubuntu", sans-serif;
+  transition: transform 175ms ease-in;
+}
+
+.escuchar__links a:hover{
+  transform: scale(1.080);
+}
+
+
+
 
 
 

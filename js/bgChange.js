@@ -112,7 +112,13 @@ function startMiembrosAnimation(){
 
 function startEscucharAnimation(){
   const btn = document.getElementById("play-random")
+  const btnDiv = document.querySelector(".random-btn");
+  const links = document.querySelectorAll(".escuchar__links__container")
   btn.style.animation = "miembroImageAnimation 650ms  cubic-bezier(.18,.42,.22,1.36) forwards"
+  btnDiv.style.animation = "float 4s infinite"
+  links.forEach(l =>{
+    l.style.animation = "miembroImageAnimation 1s 300ms cubic-bezier(.18,.42,.22,1.36) forwards"
+  })
 }
 
 function resetAnimations(){
@@ -125,4 +131,5 @@ function resetAnimations(){
   })
   // %% ESCUCHAR %%
   document.getElementById("play-random").style.animation = ""
+  document.querySelectorAll(".escuchar__links__container").forEach(i => i.style.animation = "")
 }
