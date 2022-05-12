@@ -13,9 +13,15 @@ menuItems.forEach(item => {
   })
 })
 
+const miembros = document.querySelectorAll(".miembro")
+miembros.forEach(m =>{
+  m.addEventListener("click", e =>{
+    m.classList.toggle("full")
+  })
+})
 function changeBg(name) {
   closeOpenOverlay()
-  resetMiembrosAnimation()
+  resetAnimations()
   switch (name) {
     case "galeria":
       
@@ -37,6 +43,7 @@ function changeBg(name) {
       
       setAndResetBg("linear-gradient(to right, #38e05f, #38e0ca) ")
       openOverlay("escuchar")
+      startEscucharAnimation()
       break
     case "redes":
       
@@ -65,7 +72,17 @@ function setAndResetBg(value) {
   //         },500)
 }
 
-let timer
+let timer //Es el timeout para hacer desaparecer el menu
+
+const sections = document.querySelectorAll(".section-overlay")
+sections.forEach(s => {
+  s.addEventListener("click", e => {
+    if(timer) clearTimeout(timer)
+    if(checkBox.checked) checkBox.checked = false
+  })
+})
+
+
 function openOverlay(sectionName) {
 if(timer) clearTimeout(timer)
   const section = document.getElementById(sectionName)
@@ -91,16 +108,21 @@ function startMiembrosAnimation(){
     delay+= 0.3
     floatDelay+=1.2
   })
- 
-
 }
 
-function resetMiembrosAnimation(){
+function startEscucharAnimation(){
+  const btn = document.getElementById("play-random")
+  btn.style.animation = "miembroImageAnimation 650ms  cubic-bezier(.18,.42,.22,1.36) forwards"
+}
+
+function resetAnimations(){
+  // %% MIEMBROS %%
   const miembros = document.querySelectorAll(".miembro")
   miembros.forEach(mi => {
     mi.style.animation = ""
     mi.querySelector("img").style.animation = ""
-    
+    if(mi.classList.contains("full")) mi.classList.remove("full")
   })
+  // %% ESCUCHAR %%
+  document.getElementById("play-random").style.animation = ""
 }
-// document.documentElement.style.setProperty("--bg-img", )

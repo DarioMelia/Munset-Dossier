@@ -214,12 +214,14 @@ div.bg--color {
   position: absolute;
   z-index: -1;
   opacity: 0;
+  pointer-events: none;
   background: transparent;
   transition: opacity 250ms ease-out;
 }
 
 .section-overlay.open {
   opacity: 1;
+  pointer-events: all;
 }
 .section__title {
   font-size: 3rem;
@@ -295,6 +297,12 @@ div.bg--color {
   transform: translate(-20%, -45%) scale(0.5);
 }
 
+.miembro.full {
+  z-index: 200;
+  position: absolute;
+  top: 0;bottom:0;right:0;left:0;
+}
+
 /*  %%%%%%%%%%%% ESCUCHAR %%%%%%%%%%%%%%*/
 #escuchar {
   width: 100vw;
@@ -314,7 +322,10 @@ div.bg--color {
   align-items: center;
   position: absolute;
   top: 13vh;
+  
 }
+
+
 
 #play-random {
   color: white;
@@ -323,19 +334,18 @@ div.bg--color {
   background: none;
   display: inline-block;
   -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   cursor:pointer;
+  transform: translateY(120%) scale(0.5);
 }
 
 #play-random .triangle {
   -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
   stroke-dasharray: 240;
   stroke-dashoffset: 480;
   stroke: #000;
   transform: translateY(0);
-}
-
-#play-random:hover .triangle {
-  
 }
 
 #play-random.playing .triangle {
@@ -355,14 +365,17 @@ div.bg--color {
   stroke-dasharray: 650;
   stroke-dashoffset: 650;
   -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   opacity: 0.3;
 }
 
 
-#audio-visualizer{
-  width:100%;
-  position:absolute;
-  bottom:0;
+
+
+/* %%%%%%%%%%% reusable classes %%%%%%%%%% */
+
+.display-none{
+  display: none;
 }
 
 @keyframes miembroImageAnimation {
