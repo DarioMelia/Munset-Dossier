@@ -19,6 +19,29 @@ miembros.forEach(m =>{
     m.classList.toggle("full")
   })
 })
+
+const infoBtns = document.querySelectorAll(".info__btn")
+const infoContents = document.querySelectorAll(".info__text__content")
+infoBtns.forEach(btn => {
+  btn.addEventListener("click",e=>{
+     const content = e.target.parentElement.parentElement.parentElement.querySelector(".info__text__content")
+     infoContents.forEach(i=>{
+      if(i.classList.contains("open")) i.classList.remove("open")
+     })
+     content.classList.add("open")
+     
+     
+  })
+})
+
+infoContents.forEach(i=>{
+  i.addEventListener("click", e =>{
+    if(i.classList.contains("open")) i.classList.remove("open")
+  })
+})
+
+  
+
 function changeBg(name) {
   closeOpenOverlay()
   resetAnimations()
@@ -38,6 +61,7 @@ function changeBg(name) {
       
       setAndResetBg("linear-gradient(to right, #a946fa, #fd7aff) ")
       openOverlay("info")
+      startInfoAnimation()
       break
     case "escuchar":
       
@@ -98,6 +122,9 @@ function closeOpenOverlay() {
   openOverlay ? openOverlay.classList.remove("open") : null
 }
 
+
+
+ // %%%%%%%% ANIMATIONS %%%%%%%%
 function startMiembrosAnimation(){
   const miembros = document.querySelectorAll(".miembro")
   let delay = 0
@@ -131,6 +158,11 @@ function startRedesAnimation(){
   })
 }
 
+function startInfoAnimation(){
+  const btns = document.querySelectorAll(".info__btn")
+  btns.forEach(btn => btn.style.animation ="miembroImageAnimation 800ms cubic-bezier(.18,.42,.22,1.36) forwards" )
+}
+
 function resetAnimations(){
   // %% MIEMBROS %%
   const miembros = document.querySelectorAll(".miembro")
@@ -145,4 +177,7 @@ function resetAnimations(){
 
   // %% REDES %%
   document.querySelectorAll("#redes a").forEach(i=>i.style.animation ="")
+
+  // %% INFO %%
+  document.querySelectorAll(".info__btn").forEach(btn => btn.style.animation ="" )
 }

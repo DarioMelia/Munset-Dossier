@@ -11,8 +11,13 @@
   --menu-item-size: 80px;
   --menu-item-sep: -110px;
   --menu-item-fs: 2.5rem;
+  
 
-  --redes-size: clamp(3rem, 9vw, 12rem)
+  --redes-size: clamp(3rem, 9vw, 12rem);
+
+  --info-btn-width: 180px;
+  --info-btn-height: 57px;
+  --info-btn-fs: 2rem;
 }
 
 body {
@@ -69,26 +74,7 @@ div.bg--color {
   border-radius: 50%;
   cursor: pointer;
 }
-/* .menu-toggler:hover + label,
-  .menu-toggler:hover + label:before,
-  .menu-toggler:hover + label:after{
-    background: white;
-  }
-  .menu-toggler:checked + label {
-    background: transparent;
-  }
-  .menu-toggler:checked + label:before,
-  .menu-toggler:checked + label:after{
-    top:0;
-    width:40px;
-    transform-origin: 50% 50%;
-  }
-  .menu-toggler:checked + label:before {
-    transform: rotate(45deg) translateY(-15px) translateX(-15px);
-  }
-  .menu-toggler:checked + label:after {
-    transform: rotate(-45deg);
-  } */
+
 .menu-toggler:checked ~ ul .menu-item {
   opacity: 1;
 }
@@ -113,40 +99,7 @@ div.bg--color {
 .menu-toggler:checked ~ ul .menu-item a {
   pointer-events: auto;
 }
-/* .menu-toggler + label {
-  width: 40px;
-  z-index: 1;
-  border-radius: 2.5px;
 
-  transition: transform 0.5s top 0.5s;
-  position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-} */
-/* .menu-toggler + label:before,
-  .menu-toggler + label:after {
-    width: 40px;
-    height: 5px;
-    display: block;
-    z-index: 1;
-    border-radius: 2.5px;
-    background: rgba(255, 255, 255, 0.7);
-    transition: transform 0.5s top 0.5s;
-    content: "";
-    position: absolute;
-    display: block;
-    left: 0;
-  }
-  .menu-toggler + label:before {
-    top: 10px;
-  }
-  .menu-toggler + label:after {
-    top: -10px;
-  } */
 .menu-item:nth-child(1) a {
   transform: rotate(-18deg);
   background: linear-gradient(to right, #38e05ff5, #38e0caf5);
@@ -439,6 +392,118 @@ div.bg--color {
 }
 #redes a:nth-child(5){
   transform: translate(-190%, -160%) scale(0.5);
+}
+
+/*  %%%%%%%%%%%% INFO %%%%%%%%%%%%%%*/
+
+#info{
+  height: 100vh;
+  padding: 10vh 0;
+  
+}
+
+.info__container{
+  width: 80%;
+  height: 100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.info__text{
+  width: 30vw;
+  font-size: clamp(1rem, 2vw , 1.8rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.976);
+  font-weight: 500;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+  text-shadow:2px 2px 2px rgba(40, 40, 40, 0.7)
+}
+
+.info__btn{
+  font-size: var(--info-btn-fs);
+  font-family: "Ubuntu",sans-serif;
+  font-weight: 600;
+  color:white;
+  cursor: pointer;
+  position: absolute;
+  background:none;
+  border: none;
+  width: var(--info-btn-width);
+  padding: .3em .7em;
+  transition: text-shadow 400ms ease-out,
+  transform 800ms ease-in;
+  opacity: 0;
+  
+}
+
+.info__btn:hover{
+  text-shadow:4px 4px 2px rgba(40, 40, 40, 0.7) ;
+}
+.info__btn svg,
+.info__btn svg rect
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	fill: transparent;
+}
+.info__btn svg rect
+{
+	stroke: #00e2ff;
+	stroke-width: 8;
+	transition: 2s;
+	stroke-dasharray: var(--info-btn-height) var(--info-btn-width);
+	stroke-dashoffset: 320;
+}
+.info__btn:hover svg rect
+{
+	stroke: #ff0;
+	stroke-dasharray: var(--info-btn-width) var(--info-btn-height);
+	stroke-dashoffset: 0;
+}
+
+.info__text--historia .info__btn{
+  transform: translate(180%, 0%) scale(0.7);
+}
+.info__text--proyecto .info__btn{
+  transform: translate(-180%, 0%) scale(0.7);
+}
+
+.info__text__content{
+  background-color: #ffffff01;
+  backdrop-filter: blur(5px);
+  position: absolute;
+  max-width: 40vw;
+  border-radius: 15px;
+  font-family: "Ubuntu", sans-serif;
+  padding: 1em;
+  cursor:pointer;
+  transform: translateY(250%);
+  transition: transform 800ms 250ms cubic-bezier(.18,.42,.22,1.36);
+  box-shadow: 8px 12px 12px 5px rgba(0,0,0,0.5);
+}
+
+.info__text__content.open{
+  transform: translateY(0%);
+ 
+}
+
+.info__text--proyecto .info__text__content{
+  margin-left: 30px;
+}
+
+
+.info__tittle{
+  color:rgb(137, 5, 208);
+  font-size: 1.5em;
+  
 }
 
 

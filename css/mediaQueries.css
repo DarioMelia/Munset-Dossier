@@ -55,7 +55,6 @@
     .random-btn{
       top:8vh;
     }
-
     .escuchar__links{
       align-self: flex-end;
       height: 22vh;
@@ -63,6 +62,31 @@
       margin-bottom: 15vh;
       text-align: center;
     }
+
+    /* %% REDES %% */
+
+    #redes a{
+      margin-bottom: 2rem;
+    }
+
+    /* %% INFO %% */
+    .info__container{
+      flex-direction: column;
+    }
+    .info__text--proyecto .info__text__content{
+      margin-left: 0;
+    }
+    .info__text__content{
+      max-width: 90%;
+    }
+
+    :root{
+      
+      --info-btn-width: 220px;
+      --info-btn-height: 80px;
+      --info-btn-fs: 2.8rem;
+    }
+
     
   
   }
@@ -73,6 +97,10 @@
       --menu-item-size: 100px;
       --menu-item-sep: -130px;
       --menu-item-fs: 3rem;
+
+      --info-btn-width: 231px;
+      --info-btn-height: 84px;
+      --info-btn-fs: 3rem;
     }
   
     .miembro.diego {
@@ -86,6 +114,10 @@
 
     .escuchar__links{
       gap: 45vw;
+    }
+
+    .info__text__content{
+      max-width: 487px;
     }
   
   
