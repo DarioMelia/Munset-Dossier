@@ -49,6 +49,7 @@ function changeBg(name) {
       
       setAndResetBg("linear-gradient(to right, #C13584, #ff1783) ")
       openOverlay("redes")
+      startRedesAnimation()
       break
     case "seis":
       
@@ -89,7 +90,7 @@ if(timer) clearTimeout(timer)
   section.classList.add("open")
   timer = setTimeout(() => {
       checkBox.checked ? checkBox.checked=false : null
-  }, 3000);
+  }, 1500);
 }
 
 function closeOpenOverlay() {
@@ -121,6 +122,15 @@ function startEscucharAnimation(){
   })
 }
 
+function startRedesAnimation(){
+  const links = document.querySelectorAll("#redes a")
+  let delay = 0
+  links.forEach(l => {
+    l.style.animation = `miembroImageAnimation 650ms ${delay}s cubic-bezier(.18,.42,.22,1.36) forwards`
+    delay += 0.25  
+  })
+}
+
 function resetAnimations(){
   // %% MIEMBROS %%
   const miembros = document.querySelectorAll(".miembro")
@@ -132,4 +142,7 @@ function resetAnimations(){
   // %% ESCUCHAR %%
   document.getElementById("play-random").style.animation = ""
   document.querySelectorAll(".escuchar__links__container").forEach(i => i.style.animation = "")
+
+  // %% REDES %%
+  document.querySelectorAll("#redes a").forEach(i=>i.style.animation ="")
 }

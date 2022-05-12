@@ -45,7 +45,10 @@
     .miembro.jaime {
       grid-column: 2 / span 6;
       grid-row: 9 / span 5;
-      
+    }
+
+    .miembro.full{
+      top: 2rem;
     }
      
     /* %% ESCUCHAR %% */
@@ -56,7 +59,7 @@
     .escuchar__links{
       align-self: flex-end;
       height: 22vh;
-      gap: 9vw;
+      gap: 8vw;
       margin-bottom: 15vh;
       text-align: center;
     }

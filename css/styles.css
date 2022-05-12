@@ -11,6 +11,8 @@
   --menu-item-size: 80px;
   --menu-item-sep: -110px;
   --menu-item-fs: 2.5rem;
+
+  --redes-size: clamp(3rem, 9vw, 12rem)
 }
 
 body {
@@ -402,6 +404,41 @@ div.bg--color {
 
 .escuchar__links a:hover{
   transform: scale(1.080);
+}
+
+/*  %%%%%%%%%%%% REDES %%%%%%%%%%%%%%*/
+#redes{
+  display:flex;
+  gap: 20vw;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+
+  padding: 5vw;
+}
+
+#redes a{
+  text-decoration: none;
+  color:white;
+  font-size: var(--redes-size);
+  opacity: 0;
+}
+
+#redes a:nth-child(1){
+  transform: translate(320%, 160%) scale(0.5);
+}
+#redes a:nth-child(2){
+  transform: translate(0%, 160%) scale(0.5);
+}
+#redes a:nth-child(3){
+  transform: translate(-320%, 160%) scale(0.5);
+}
+#redes a:nth-child(4){
+  transform: translate(160%, -160%) scale(0.5);
+}
+#redes a:nth-child(5){
+  transform: translate(-190%, -160%) scale(0.5);
 }
 
 
