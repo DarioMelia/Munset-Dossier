@@ -6,12 +6,11 @@
 }
 
 :root {
-  --bg-img: linear-gradient(to right, #b24592, #f15f79);
+  --bg-img: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(228, 228, 228) 50%, rgb(170, 170, 170) 100%);
   --logo-size: 100px;
   --menu-item-size: 80px;
   --menu-item-sep: -110px;
   --menu-item-fs: 2.5rem;
-  
 
   --redes-size: clamp(3rem, 9vw, 12rem);
 
@@ -278,11 +277,9 @@ div.bg--color {
   align-items: center;
   position: absolute;
   top: 13vh;
-  
-}
-.random-btn{
   border-radius: 50%;
 }
+
 #play-random {
   color: white;
   border: none;
@@ -294,6 +291,13 @@ div.bg--color {
   cursor:pointer;
   opacity: 0;
   transform: translateY(120%) scale(0.5);
+}
+
+#play-random.playing{
+  box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF,
+   0 0 20px #fff018, 0 0 30px #ffff18, 0 0 40px #dcff18, 0 0 55px #ffd118,
+   0 0 75px #49ff18;
+   border-radius: 50%;
 }
 
 #play-random .triangle {
@@ -315,15 +319,17 @@ div.bg--color {
 #play-random.playing .circle {
   stroke-dashoffset: 0;
   opacity: 1;
+  
 }
 
 .circle {
   stroke: white;
-  stroke-dasharray: 650;
-  stroke-dashoffset: 650;
+  stroke-dasharray: 720;
+  stroke-dashoffset: 720;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   opacity: 0.3;
+  
 }
 
 .escuchar__links{
@@ -376,7 +382,11 @@ div.bg--color {
   color:white;
   font-size: var(--redes-size);
   opacity: 0;
+  transition: color 500ms ease-in-out,
+  text-shadow 500ms ease-in-out;
+ 
 }
+
 
 #redes a:nth-child(1){
   transform: translate(320%, 160%) scale(0.5);
@@ -392,6 +402,24 @@ div.bg--color {
 }
 #redes a:nth-child(5){
   transform: translate(-190%, -160%) scale(0.5);
+}
+
+#redes a:nth-child(1):hover{
+  color: #00acee;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #00acee, 0 0 30px #00acee, 0 0 40px #00acee, 0 0 55px #00acee, 0 0 75px #00acee;
+}
+#redes a:nth-child(2):hover{
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ff18f0, 0 0 30px #ff18f0, 0 0 40px #ff18f0, 0 0 55px #ff18f0, 0 0 75px #ff18f0;
+}
+#redes a:nth-child(3):hover{
+  color:#4267B2;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #4267B2, 0 0 30px #4267B2, 0 0 40px #4267B2, 0 0 55px #4267B2, 0 0 75px #4267B2;
+}
+#redes a:nth-child(4):hover{
+  text-shadow: 8px 6px 8px rgba(251, 255, 31, 0.83), -8px -6px 8px #C90E0E, 8px -6px 8px rgba(27, 255, 80, 0.852), -6px 8px 8px #2487ff;
+}
+#redes a:nth-child(5):hover{
+  text-shadow: 7px 7px 0px #E71D4F, -5px -6px 0px #65C3C9;
 }
 
 /*  %%%%%%%%%%%% INFO %%%%%%%%%%%%%%*/
@@ -485,14 +513,18 @@ div.bg--color {
   font-family: "Ubuntu", sans-serif;
   padding: 1em;
   cursor:pointer;
-  transform: translateY(250%);
-  transition: transform 800ms 250ms cubic-bezier(.18,.42,.22,1.36);
+  transform: translateY(300%);
+  transition: transform 800ms 250ms cubic-bezier(.18,.42,.22,1.36),
+  opacity 800ms;
   box-shadow: 8px 12px 12px 5px rgba(0,0,0,0.5);
+  opacity: 0;
 }
 
 .info__text__content.open{
   transform: translateY(0%);
- 
+  opacity: 1;
+  z-index: 3;
+  
 }
 
 .info__text--proyecto .info__text__content{
