@@ -71,6 +71,15 @@ div.bg--color {
   background-color: white;
   border-radius: 50%;
   cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+  animation: pulse 2.5s infinite;
+  transition: transform 200ms ease-in;
+}
+
+.menu-toggler:hover ~ .logo   {
+  animation:none;
+  transform: scale(1.06);
+  
 }
 
 
@@ -421,7 +430,7 @@ div.bg--color {
 }
 #redes a:nth-child(3):hover{
   color:#4267B2;
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #4267B2, 0 0 30px #4267B2, 0 0 40px #4267B2, 0 0 55px #4267B2, 0 0 75px #4267B2;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #5a8aea, 0 0 30px #5388f2, 0 0 40px #6f9fff, 0 0 55px #4f86f5, 0 0 75px #4267B2;
 }
 #redes a:nth-child(4):hover{
   text-shadow: 8px 6px 8px rgba(251, 255, 31, 0.83), -8px -6px 8px #C90E0E, 8px -6px 8px rgba(27, 255, 80, 0.852), -6px 8px 8px #2487ff;
@@ -433,7 +442,7 @@ div.bg--color {
 /*  %%%%%%%%%%%% INFO %%%%%%%%%%%%%%*/
 
 #info{
-  height: 100vh;
+  height: calc(100vh - calc(100vh - 100%));
   padding: 10vh 0;
   
 }
@@ -474,6 +483,7 @@ div.bg--color {
   transition: text-shadow 400ms ease-out,
   transform 800ms ease-in;
   opacity: 0;
+  
   
 }
 
@@ -602,6 +612,45 @@ div.bg--color {
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes infoBtnAnimation {
+  0%{
+    stroke-dasharray: var(--info-btn-height) var(--info-btn-width);
+	  stroke-dashoffset: 320;
+  }
+
+  33%{
+    stroke-dasharray: var(--info-btn-height) var(--info-btn-width);
+	  stroke-dashoffset: 320;
+  }
+
+  66%{
+    
+	  stroke-dasharray: var(--info-btn-width) var(--info-btn-height);
+	  stroke-dashoffset: 0;
+  }
+ 
+  100%{
+   
+    stroke-dasharray: var(--info-btn-height) var(--info-btn-width);
+	  stroke-dashoffset: 320;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 2px 0 rgba(120, 120, 120, 0.4);
+    box-shadow: 0 0 2px 0 rgba(109, 109, 109, 0.4);
+  }
+  50% {
+      -moz-box-shadow: 0 0 6px 15px rgba(204,169,44, 0);
+      box-shadow: 0 0 6px 15px rgba(204,169,44, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
   }
 }
 /* .bg-fade-animation{
