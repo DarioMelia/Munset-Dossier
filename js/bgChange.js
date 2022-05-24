@@ -1,5 +1,6 @@
 const body = document.querySelector("body")
 const checkBox = document.querySelector("input[type='checkbox']")
+const logo = checkBox.nextElementSibling
 const bgDiv = document.querySelector(".bg--color")
 
 checkBox.addEventListener("click", e => {
@@ -29,14 +30,18 @@ infoBtns.forEach(btn => {
       if(i.classList.contains("open")) i.classList.remove("open")
      })
      content.classList.add("open")
-     
+     logo.classList.add("z-2") // remove en resetAnimations()
+     checkBox.classList.add("z-2")
      
   })
 })
 
 infoContents.forEach(i=>{
   i.addEventListener("click", e =>{
-    if(i.classList.contains("open")) i.classList.remove("open")
+    if(i.classList.contains("open")) {
+      i.classList.remove("open")
+      checkBox.classList.remove("z-2")
+    }
   })
 })
 
@@ -180,4 +185,9 @@ function resetAnimations(){
 
   // %% INFO %%
   document.querySelectorAll(".info__btn").forEach(btn => btn.style.animation ="" )
+  if(logo.classList.contains("z-2")) {
+    logo.classList.remove("z-2")
+    checkBox.classList.remove("z-2")
+  }
+  
 }

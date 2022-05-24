@@ -61,18 +61,23 @@ div.bg--color {
 }
 .logo {
   position: absolute;
-  display: block;
+  display: inline-block;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   margin: auto;
   width: var(--logo-size);
-  z-index: 1;
   background-color: white;
   border-radius: 50%;
   cursor: pointer;
 }
+
+
+.logo:not(.z-2){
+  z-index: initial;
+}
+
 
 .menu-toggler:checked ~ ul .menu-item {
   opacity: 1;
@@ -218,7 +223,7 @@ div.bg--color {
   position: absolute;
   font-family: "Bangers", sans-serif;
   color: white;
-  font-size: clamp(1rem, 4vw, 2.3rem);
+  font-size: clamp(1rem, 3vw, 2.3rem);
   text-align: center;
   letter-spacing: 2px;
   text-shadow: 3px 3px 3px rgba(36, 36, 36, 0.83);
@@ -551,6 +556,10 @@ div.bg--color {
 
 .display-none{
   display: none;
+}
+
+.z-2{
+  z-index:-2;
 }
 
 @keyframes miembroImageAnimation {
