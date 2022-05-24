@@ -13,12 +13,16 @@
       margin-bottom: 15vh;
       text-align: center;
     }
+
+    div.escuchar__links .left{
+      text-align: center;
+    }
     
     .escuchar__links__container{
      gap:1rem;
     }
   }
-  @media (max-width: 600px){
+  @media  (orientation:portrait) {
     .miembro img{
       border-width: 6px;
     }
@@ -39,7 +43,7 @@
     }
     .miembro.fran {
       grid-column: 2 / span 8;
-      grid-row: 15 / span 6;
+      grid-row: 14 / span 6;
       
     }
     .miembro.jaime {
@@ -60,7 +64,9 @@
       height: 22vh;
       gap: 8vw;
       margin-bottom: 15vh;
-      text-align: center;
+    }
+    .escuchar__links .left{
+      text-align: right;
     }
 
     /* %% REDES %% */
@@ -108,6 +114,9 @@
     }
     .miembro.sara {
       grid-row: 3 / span 6;
+    }
+    .miembro.dario {
+      white-space: nowrap;
     }
 
     /* %% ESCUCHAR %% */
