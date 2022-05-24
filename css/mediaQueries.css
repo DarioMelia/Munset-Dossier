@@ -144,6 +144,13 @@
     .miembro.jaime {
       grid-row: 10 / span 5;
     }
+
+    .miembro.full{
+      max-width: 800px;
+    }
+    .miembro.dario.full{
+      max-width: 550px;
+    }
   }
 
 

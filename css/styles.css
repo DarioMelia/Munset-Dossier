@@ -217,6 +217,7 @@ div.bg--color {
   width: auto;
   position: relative;
   opacity: 0;
+  transition: margin 300ms;
   cursor: pointer;
 }
 
@@ -273,6 +274,13 @@ div.bg--color {
   z-index: 200;
   position: absolute;
   top: 0;bottom:0;right:0;left:0;
+  margin: 10vh auto;
+  max-width: 600px;
+  top: calc(50vh - 50%);
+}
+
+.miembro.dario.full{
+  max-width: 450px;
 }
 
 /*  %%%%%%%%%%%% ESCUCHAR %%%%%%%%%%%%%%*/
@@ -423,14 +431,14 @@ div.bg--color {
 
 #redes a:nth-child(1):hover{
   color: #00acee;
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #00acee, 0 0 30px #00acee, 0 0 40px #00acee, 0 0 55px #00acee, 0 0 75px #00acee;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 16px #00acee, 0 0 23px #00acee, 0 0 30px #00acee, 0 0 40px #00acee, 0 0 46px #00acee;
 }
 #redes a:nth-child(2):hover{
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ff18f0, 0 0 30px #ff18f0, 0 0 40px #ff18f0, 0 0 55px #ff18f0, 0 0 75px #ff18f0;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 16px #ff18f0, 0 0 23px #ff18f0, 0 0 30px #ff18f0, 0 0 40px #ff18f0, 0 0 46px #ff18f0;
 }
 #redes a:nth-child(3):hover{
   color:#4267B2;
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #5a8aea, 0 0 30px #5388f2, 0 0 40px #6f9fff, 0 0 55px #4f86f5, 0 0 75px #4267B2;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 16px #5a8aea, 0 0 23px #5388f2, 0 0 30px #6f9fff, 0 0 40px #4f86f5, 0 0 46px #4267B2;
 }
 #redes a:nth-child(4):hover{
   text-shadow: 8px 6px 8px rgba(251, 255, 31, 0.83), -8px -6px 8px #C90E0E, 8px -6px 8px rgba(27, 255, 80, 0.852), -6px 8px 8px #2487ff;
