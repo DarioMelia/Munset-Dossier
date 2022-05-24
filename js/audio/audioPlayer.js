@@ -20,4 +20,9 @@ playBtn.addEventListener("click", e =>{
         prevAudio.pause()
     }
 
+    audio.addEventListener("ended", e=>{
+        playBtn.classList.remove("playing")
+        isPlaying= false
+    })
+
 })
