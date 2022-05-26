@@ -610,6 +610,14 @@ div.bg--color {
   scrollbar-width: none;  /* Firefox */
 }
 
+#galeria .slider.videos{
+  transform:translateX(-200%)
+}
+#galeria .slider.fotos{
+  transform:translateX(200%)
+}
+
+
 #galeria .slider.no-scroll-snap{
   scroll-snap-type: none;
 }
@@ -623,17 +631,12 @@ div.bg--color {
   height: 300px;
   border-radius: 50%;
   scroll-snap-align: start;
-  transition: border-radius 250ms ease-in-out;
+  transition: border-radius 250ms ease-in-out,flex 250ms;
   filter: saturate(25%);
   cursor: pointer;
 }
 
-.square:hover{
-  filter: saturate(120%);
-  border-radius: 5px;
-  z-index: 4;
 
-}
 
 
 

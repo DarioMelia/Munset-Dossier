@@ -14,6 +14,7 @@ menuItems.forEach(item => {
   })
 })
 
+// %%%%%%%%%%%% MIEMBROS %%%%%%%%%%%%
 const miembros = document.querySelectorAll(".miembro")
 miembros.forEach(m =>{
   m.addEventListener("click", e =>{
@@ -21,6 +22,8 @@ miembros.forEach(m =>{
   })
 })
 
+
+// %%%%%%%%%%%% INFO %%%%%%%%%%%%
 const infoBtns = document.querySelectorAll(".info__btn")
 const infoContents = document.querySelectorAll(".info__text__content")
 infoBtns.forEach(btn => {
@@ -46,7 +49,20 @@ infoContents.forEach(i=>{
 })
 
 
+
+// %%%%%%%%%%%% GALERIA %%%%%%%%%%%%
 const sliders = document.querySelectorAll(".slider")
+const galeria = document.getElementById("galeria")
+const squares = galeria.querySelectorAll(".square")
+sliders[1].scrollLeft = sliders[1].scrollWidth //llevar el slider de fotos al final
+
+galeria.addEventListener("click",e=>{
+  if(!e.target.classList.contains("square")){
+    let squaresArray = [...squares]
+    let bigSquare = squaresArray.filter(s=>s.classList.contains("big"))
+    bigSquare[0]?bigSquare[0].classList.remove("big"):null
+  }
+})
 
 sliders.forEach(i => {
   let timer
@@ -60,8 +76,25 @@ sliders.forEach(i => {
     }, 300);
   })
 })
+
+squares.forEach(i=>{
+  i.addEventListener("click",e=>{
+    let isBig = false;
+    if(i.classList.contains("big")) isBig = true
+    let squaresArray = [...squares]
+    let bigSquare = squaresArray.filter(s=>s.classList.contains("big"))
+    if(bigSquare){
+    bigSquare.forEach(s=>{
+      s.classList.remove("big")
+    })}
+    if(!isBig)i.classList.add("big")
+    
+  })
+})
   
 
+
+// %%%%%%%%%%%%%%% BG CHANGE %%%%%%%%%%%%%%%%%
 function changeBg(name) {
   closeOpenOverlay()
   resetAnimations()
@@ -70,6 +103,7 @@ function changeBg(name) {
       
       setAndResetBg("linear-gradient(to right, #45ffd7, #5757f4)")
       openOverlay("galeria")
+      startGaleriaAnimation()
       break
     case "miembros":
       
@@ -183,6 +217,12 @@ function startInfoAnimation(){
   btns.forEach(btn => btn.style.animation ="miembroImageAnimation 800ms cubic-bezier(.18,.42,.22,1.36) forwards" )
 }
 
+function startGaleriaAnimation(){
+  sliders.forEach(s=>{
+    s.style.animation = "miembroImageAnimation 1.2s cubic-bezier(.18,.42,.22,1.36) forwards"
+  }) 
+}
+
 function resetAnimations(){
   // %% MIEMBROS %%
   const miembros = document.querySelectorAll(".miembro")
@@ -204,5 +244,8 @@ function resetAnimations(){
     logo.classList.remove("z-2")
     checkBox.classList.remove("z-2")
   }
+
+  // %% GALERIA %%
+  sliders.forEach(s=>s.style.animation = "") 
   
 }

@@ -21,6 +21,13 @@
     .escuchar__links__container{
      gap:1rem;
     }
+    
+    .square{
+      flex: 1 0 200px;
+      height: 200px;
+      
+    }
+
   }
   @media  (orientation:portrait) {
     .miembro img{
@@ -84,6 +91,18 @@
     }
     .info__text__content{
       max-width: 90%;
+    }
+
+    /* %% GALLERY %% */
+    #galeria .slider{
+      width: 100%;
+      padding:0 4rem;
+      
+    }
+
+    .square{
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
     }
 
     :root{
@@ -164,5 +183,21 @@
       overflow: hidden;
       box-shadow: 5px 5px 12px 2px #48484855;
     }
+
+    .square.big{
+      flex: 1 0 500px;
+      filter: saturate(120%);
+      border-radius: 5px;
+      z-index: 4;
+    }
     
+  }
+
+  @media (hover:hover){
+    .square:hover{
+      flex: 1 0 500px;
+      filter: saturate(120%);
+      border-radius: 5px;
+      z-index: 4;
+    }
   }
