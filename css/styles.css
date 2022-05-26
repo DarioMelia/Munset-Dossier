@@ -39,7 +39,7 @@ div.bg {
   opacity: 0;
 }
 div.bg--white {
-  background-image: linear-gradient(to right, #f8f8f8, #cfcfcf);
+  background-image: linear-gradient(to right, #f8f8f8, #e4e4e4);
 }
 
 div.bg--color {
@@ -175,7 +175,12 @@ div.bg--color {
   z-index: 50;
 }
 
-/* %%%%%%%%%% OVERLAYS %%%%%%%%%%% */
+
+
+
+/* %%%%%%%%%%%%%%%%%%%%% OVERLAYS %%%%%%%%%%%%%%%%%%%%%% */
+
+
 .section-overlay {
   width: 100vw;
   max-height: 100vh;
@@ -205,7 +210,12 @@ div.bg--color {
   font-family: "Ubuntu", sans-serif;
 }
 
-/*  %%%%%%%%%%%% MIEMBROS %%%%%%%%%%%%%%*/
+
+
+
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+                /* MIEMBROS */
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .miembros__grid {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -283,7 +293,11 @@ div.bg--color {
   max-width: 450px;
 }
 
-/*  %%%%%%%%%%%% ESCUCHAR %%%%%%%%%%%%%%*/
+
+
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+                /* ESCUCHAR */
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 #escuchar {
   width: 100vw;
   height: 100vh;
@@ -390,7 +404,11 @@ div.bg--color {
   transform: scale(1.080);
 }
 
-/*  %%%%%%%%%%%% REDES %%%%%%%%%%%%%%*/
+
+
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+                /* REDES */
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 #redes{
   display:flex;
   gap: 20vw;
@@ -447,7 +465,10 @@ div.bg--color {
   text-shadow: 7px 7px 0px #E71D4F, -5px -6px 0px #65C3C9;
 }
 
-/*  %%%%%%%%%%%% INFO %%%%%%%%%%%%%%*/
+
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+                /* INFO */
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 
 #info{
   height: calc(100vh - calc(100vh - 100%));
@@ -565,6 +586,54 @@ div.bg--color {
 }
 
 
+
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+                /* GALERIA */
+/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+
+#galeria{
+  display:flex;
+  height: calc(100vh - calc(100vh - 100%));
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#galeria .slider{
+  display:flex;
+  gap: 2.5rem;
+  width: 80vw;
+  overflow-x: auto;
+  overflow-y:hidden;
+  scroll-snap-type: x proximity;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#galeria .slider.no-scroll-snap{
+  scroll-snap-type: none;
+}
+
+#galeria .slider::-webkit-scrollbar{
+  display:none;
+}
+
+.square{
+  flex: 1 0 300px;
+  height: 300px;
+  border-radius: 50%;
+  scroll-snap-align: start;
+  transition: border-radius 250ms ease-in-out;
+  filter: saturate(25%);
+  cursor: pointer;
+}
+
+.square:hover{
+  filter: saturate(120%);
+  border-radius: 5px;
+  z-index: 4;
+
+}
 
 
 

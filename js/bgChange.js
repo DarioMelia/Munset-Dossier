@@ -45,6 +45,21 @@ infoContents.forEach(i=>{
   })
 })
 
+
+const sliders = document.querySelectorAll(".slider")
+
+sliders.forEach(i => {
+  let timer
+  i.addEventListener("wheel", e =>{
+    i.classList.add("no-scroll-snap")
+    if(timer) clearTimeout(timer)
+    if(e.deltaY > 0) i.scrollLeft += 100
+    else i.scrollLeft -= 100
+    timer = setTimeout(() => {
+      i.classList.remove("no-scroll-snap")
+    }, 300);
+  })
+})
   
 
 function changeBg(name) {
