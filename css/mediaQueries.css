@@ -23,7 +23,7 @@
     }
     
     .square{
-      flex: 1 0 200px;
+      flex: 0 0 200px;
       height: 200px;
       
     }
@@ -97,6 +97,7 @@
     #galeria .slider{
       width: 100%;
       padding:0 4rem;
+      scroll-snap-type: x mandatory;
       
     }
 

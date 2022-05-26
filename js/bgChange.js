@@ -75,6 +75,12 @@ sliders.forEach(i => {
       i.classList.remove("no-scroll-snap")
     }, 300);
   })
+
+  i.addEventListener("scroll", e=>{
+    console.log('e', e)
+    console.log('i', i)
+    
+  })
 })
 
 squares.forEach(i=>{
@@ -219,6 +225,7 @@ function startInfoAnimation(){
 
 function startGaleriaAnimation(){
   sliders.forEach(s=>{
+    
     s.style.animation = "miembroImageAnimation 1.2s cubic-bezier(.18,.42,.22,1.36) forwards"
   }) 
 }
