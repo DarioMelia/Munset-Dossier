@@ -50,53 +50,6 @@ infoContents.forEach(i=>{
 
 
 
-// %%%%%%%%%%%% GALERIA %%%%%%%%%%%%
-const sliders = document.querySelectorAll(".slider")
-const galeria = document.getElementById("galeria")
-const squares = galeria.querySelectorAll(".square")
-sliders[1].scrollLeft = sliders[1].scrollWidth //llevar el slider de fotos al final
-
-galeria.addEventListener("click",e=>{
-  if(!e.target.classList.contains("square")){
-    let squaresArray = [...squares]
-    let bigSquare = squaresArray.filter(s=>s.classList.contains("big"))
-    bigSquare[0]?bigSquare[0].classList.remove("big"):null
-  }
-})
-
-sliders.forEach(i => {
-  let timer
-  i.addEventListener("wheel", e =>{
-    i.classList.add("no-scroll-snap")
-    if(timer) clearTimeout(timer)
-    if(e.deltaY > 0) i.scrollLeft += 100
-    else i.scrollLeft -= 100
-    timer = setTimeout(() => {
-      i.classList.remove("no-scroll-snap")
-    }, 300);
-  })
-
-  i.addEventListener("scroll", e=>{
-    console.log('e', e)
-    console.log('i', i)
-    
-  })
-})
-
-squares.forEach(i=>{
-  i.addEventListener("click",e=>{
-    let isBig = false;
-    if(i.classList.contains("big")) isBig = true
-    let squaresArray = [...squares]
-    let bigSquare = squaresArray.filter(s=>s.classList.contains("big"))
-    if(bigSquare){
-    bigSquare.forEach(s=>{
-      s.classList.remove("big")
-    })}
-    if(!isBig)i.classList.add("big")
-    
-  })
-})
   
 
 
@@ -192,7 +145,6 @@ function startMiembrosAnimation(){
   miembros.forEach(mi => {
     mi.style.animation = `miembroImageAnimation 1s ${delay}s ease-in-out forwards`
     mi.querySelector("img").style.animation = `float 5s ${floatDelay}s infinite`
-    console.log(mi.querySelector("img"))
     delay+= 0.3
     floatDelay+=1.2
   })

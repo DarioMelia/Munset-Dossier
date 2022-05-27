@@ -605,7 +605,7 @@ div.bg--color {
   width: 80vw;
   overflow-x: auto;
   overflow-y:hidden;
-  scroll-snap-type: x proximity;
+  
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
