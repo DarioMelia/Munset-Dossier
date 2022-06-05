@@ -9,7 +9,11 @@ let isPlaying = false
 let prevAudio
 playBtn.addEventListener("click", e =>{
     isPlaying=!isPlaying
-    let audio = audios[Math.floor(Math.random()*2)]
+    let audioIdx = Math.floor(Math.random()*2)
+    let audio = audios[audioIdx]
+    if(audio === prevAudio){
+        audioIdx
+    }
     if(isPlaying){
         playBtn.classList.add("playing")
         audio.currentTime = 0
