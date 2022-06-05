@@ -72,7 +72,7 @@ div.bg--color {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
-  animation: pulse 2.5s infinite;
+  animation: pulse 2s infinite;
   transition: transform 200ms ease-in;
 }
 
@@ -723,14 +723,17 @@ div.bg--color {
   0% {
     -moz-box-shadow: 0 0 2px 0 rgba(120, 120, 120, 0.4);
     box-shadow: 0 0 2px 0 rgba(109, 109, 109, 0.4);
+    transform: scale(1);
   }
   50% {
-      -moz-box-shadow: 0 0 6px 15px rgba(204,169,44, 0);
-      box-shadow: 0 0 6px 15px rgba(204,169,44, 0);
+      -moz-box-shadow: 0 0 30px 15px rgba(204,169,44, 0);
+      box-shadow: 0 0 30px 15px rgba(204,169,44, 0);
+      transform: scale(1.085);
   }
   100% {
       -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      transform: scale(1.085);
   }
 }
 /* .bg-fade-animation{

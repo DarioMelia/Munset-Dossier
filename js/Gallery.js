@@ -21,15 +21,20 @@ squares.forEach(i=>{
 sliders.forEach(slider => {
   const childrenCount = slider.children.length
   setScrollWheelEvent(slider)
-  cloneAndApendChildren(slider)
+  cloneAndApendChildren(slider,childrenCount,true)
+  
+  
 
   slider.addEventListener("scroll", e => {
     if (e.target.clientWidth + e.target.scrollLeft >= e.target.scrollWidth) {
       console.log("Llegaste al final")
-      deleteChildrensAtBegining(e.target, childrenCount)
+      deleteFirstChildrenAddNew(e.target, childrenCount)
       e.target.scrollLeft = 0
     } else if (e.target.scrollLeft <= 0) {
-      console.log("llegaste al principio")
+    //   console.log("llegaste al principio")
+    //   deleteLastChildrenAddNew(e.target,childrenCount)
+    //   e.target.scrollLeft = e.target.scrollWidth
+      
     }
   })
 })
@@ -40,7 +45,49 @@ sliders.forEach(slider => {
 
 
 
-function squaresClickHandler(e){
+
+
+  function cloneAndApendChildren(parent,count,atEnd){
+    const children = parent.children
+    const childrenClones = [...children].map(child=>child.cloneNode(true))
+  
+    childrenClones.forEach((ch,i)=>{
+        if(i<count){
+            console.log(i)
+            ch.addEventListener("click",squaresClickHandler)
+            atEnd?parent.appendChild(ch):parent.insertBefore(ch,children[0])
+            
+          }
+    })
+  }
+
+  function deleteFirstChildrenAddNew(parent, count){
+    const children = [...parent.children]
+    cloneAndApendChildren(parent,count,true)
+    children.forEach((ch,i) => {
+      if(i<count){
+        ch.remove()
+      }
+    })
+  }
+
+  function deleteLastChildrenAddNew(parent,count){
+    const children = [...parent.children]
+    cloneAndApendChildren(parent,count,false)
+    children.forEach((ch,i) => {
+        if(i>=children.length - count){
+          ch.remove()
+        }
+      })
+  }
+
+  
+
+
+
+
+
+  function squaresClickHandler(e){
     let isBig = false;
     if(e.target.classList.contains("big")) isBig = true
     let squaresArray = [...galeria.querySelectorAll(".square")]
@@ -51,34 +98,6 @@ function squaresClickHandler(e){
     })}
     if(!isBig)e.target.classList.add("big")
   }
-
-  function cloneAndApendChildren(parent){
-    const children = parent.children
-    const childrenClones = [...children].map(child=>child.cloneNode(true))
-    childrenClones.forEach((ch,i)=>{
-      ch.addEventListener("click",squaresClickHandler)
-      parent.appendChild(ch)
-    })
-  }
-
-  function deleteChildrensAtBegining(parent, count){
-    const children = [...parent.children]
-    const childrenClones = children.map(child=>child.cloneNode(true))
-    childrenClones.forEach((ch,i)=>{
-      
-      if(i<count){
-        ch.addEventListener("click",squaresClickHandler)
-        parent.appendChild(ch)
-      }
-    })
-    children.forEach((ch,i) => {
-      if(i<count){
-        ch.remove()
-      }
-    })
-    console.log("Children after del: ", children)
-  }
-
 
   function setScrollWheelEvent(slider){
     let timer
