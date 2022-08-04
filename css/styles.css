@@ -6,7 +6,7 @@
 }
 
 :root {
-  --bg-img: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(228, 228, 228) 50%, rgb(170, 170, 170) 100%);
+  --bg-img: white;
   --logo-size: 100px;
   --menu-item-size: 80px;
   --menu-item-sep: -110px;
@@ -35,15 +35,17 @@ div.bg {
   height: 100vh;
   position: absolute;
   z-index: -20;
-  transition: opacity 300ms ease-out;
+  transition: opacity 500ms ease-out;
   opacity: 0;
 }
 div.bg--white {
   background-image: linear-gradient(to right, #f8f8f8, #e4e4e4);
+  
 }
 
 div.bg--color {
   background-image: var(--bg-img);
+  overflow: hidden;
 }
 .menu-toggler {
   position: absolute;
@@ -74,7 +76,7 @@ div.bg--color {
   cursor: pointer;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
   animation: pulse 2s infinite;
-  transition: transform 200ms ease-in;
+  transition: transform 200ms ease-in, opacity 230ms ease-out;
 }
 
 .menu-toggler:hover ~ .logo   {
@@ -255,7 +257,7 @@ div.bg--color {
   white-space: nowrap;
 }
 .miembro.diego {
-  grid-column: 3 / span 5;
+  grid-column: 4 / span 5;
   grid-row: 5 / span 8;
   transform: translate(70%, 45%) scale(0.5);
 }
@@ -271,13 +273,13 @@ div.bg--color {
   
 }
 .miembro.fran {
-  grid-column: 2 / span 4;
-  grid-row: 11 / span 6;
+  grid-column: 2 / span 3;
+  grid-row: 9 / span 4;
   transform: translate(70%, -45%) scale(0.5);
 }
 .miembro.jaime {
-  grid-column: 8 / span 4;
-  grid-row: 10 / span 5;
+  grid-column: 7 / span 5;
+  grid-row: 11 / span 5;
   transform: translate(-20%, -45%) scale(0.5);
 }
 
@@ -666,6 +668,14 @@ div.bg--color {
   z-index:-2;
 }
 
+.low-opacity{
+  opacity: 0;
+  
+}
+.no-mouse{
+  pointer-events: none;
+}
+
 @keyframes miembroImageAnimation {
   0% {
     opacity: 0;
@@ -749,6 +759,12 @@ div.bg--color {
       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
       transform: scale(1.085);
   }
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+ }
 }
 /* .bg-fade-animation{
   animation: bg-fade 1s ease-in-out forwards;

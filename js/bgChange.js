@@ -7,6 +7,8 @@ const bgDiv = document.querySelector(".bg--color")
 
 checkBox.addEventListener("click", e => {
   body.classList.add("color-bg")
+  
+  
 })
 
 const menuItems = document.querySelectorAll(".menu-item a")
@@ -19,24 +21,13 @@ menuItems.forEach(item => {
 // %%%%%%%%%%%% MIEMBROS %%%%%%%%%%%%
 const miembros = document.querySelectorAll(".miembro")
 
-// miembros.forEach(m =>{
-//   m.addEventListener("click", e =>{
-//     if(Array.from(miembros).filter(mi => mi.classList.contains("full")).length === 0){
-//       m.classList.add("full")
-//     }else{
-//       m.classList.remove("full")
-//     } 
-    
-    
-//   })
-// })
-
 document.getElementById("miembros").addEventListener("click", e => {
   let isRemoved
   miembros.forEach(m => {
     if(m.classList.contains("full")){
       m.classList.remove("full")
-      console.log("removí full")
+      logo.classList.remove("low-opacity")
+      checkBox.classList.remove("no-mouse")
       isRemoved = true
     }
   })
@@ -46,7 +37,8 @@ document.getElementById("miembros").addEventListener("click", e => {
     if(Array.from(miembros).filter(mi => mi.classList.contains("full")).length === 0){
       if(!isRemoved){
         mbr.classList.add("full")
-        console.log("añadí full")
+        logo.classList.add("low-opacity")
+        checkBox.classList.add("no-mouse")
       }
     }
   
