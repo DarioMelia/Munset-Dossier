@@ -89,6 +89,7 @@ sliders.forEach(slider => {
 
   function squaresClickHandler(e){
     let isBig = false;
+    
     if(e.target.classList.contains("big")) isBig = true
     let squaresArray = [...galeria.querySelectorAll(".square")]
     let bigSquare = squaresArray.filter(s=>s.classList.contains("big"))
