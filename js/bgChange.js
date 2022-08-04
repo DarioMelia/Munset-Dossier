@@ -3,6 +3,8 @@ const checkBox = document.querySelector("input[type='checkbox']")
 const logo = checkBox.nextElementSibling
 const bgDiv = document.querySelector(".bg--color")
 
+
+
 checkBox.addEventListener("click", e => {
   body.classList.add("color-bg")
 })
@@ -16,10 +18,40 @@ menuItems.forEach(item => {
 
 // %%%%%%%%%%%% MIEMBROS %%%%%%%%%%%%
 const miembros = document.querySelectorAll(".miembro")
-miembros.forEach(m =>{
-  m.addEventListener("click", e =>{
-    m.classList.toggle("full")
+
+// miembros.forEach(m =>{
+//   m.addEventListener("click", e =>{
+//     if(Array.from(miembros).filter(mi => mi.classList.contains("full")).length === 0){
+//       m.classList.add("full")
+//     }else{
+//       m.classList.remove("full")
+//     } 
+    
+    
+//   })
+// })
+
+document.getElementById("miembros").addEventListener("click", e => {
+  let isRemoved
+  miembros.forEach(m => {
+    if(m.classList.contains("full")){
+      m.classList.remove("full")
+      console.log("removí full")
+      isRemoved = true
+    }
   })
+
+  if(e.target.parentElement.classList.contains("miembro")){
+    let mbr = e.target.parentElement
+    if(Array.from(miembros).filter(mi => mi.classList.contains("full")).length === 0){
+      if(!isRemoved){
+        mbr.classList.add("full")
+        console.log("añadí full")
+      }
+    }
+  
+  }
+
 })
 
 

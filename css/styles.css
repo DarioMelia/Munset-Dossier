@@ -67,6 +67,7 @@ div.bg--color {
   right: 0;
   left: 0;
   margin: auto;
+  padding: 8px;
   width: var(--logo-size);
   background-color: white;
   border-radius: 50%;
@@ -270,7 +271,7 @@ div.bg--color {
   
 }
 .miembro.fran {
-  grid-column: 2 / span 5;
+  grid-column: 2 / span 4;
   grid-row: 11 / span 6;
   transform: translate(70%, -45%) scale(0.5);
 }
@@ -289,6 +290,18 @@ div.bg--color {
   top: calc(50vh - 50%);
 }
 
+.miembro.full h3{
+  background-color: white;
+  text-shadow: none;
+  padding: .8rem;
+  z-index: -1;
+  color: black;
+  top: -1.6em;
+}
+
+.miembro.fran.full{
+  max-width: 700px;
+}
 .miembro.dario.full{
   max-width: 450px;
 }
@@ -631,6 +644,7 @@ div.bg--color {
   height: 300px;
   border-radius: 50%;
   scroll-snap-align: start;
+  background-size: cover !important ;
   transition: border-radius 250ms ease-in-out,flex 250ms;
   filter: saturate(25%);
   cursor: pointer;
