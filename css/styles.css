@@ -6,16 +6,16 @@
 }
 
 :root {
-  --bg-img: linear-gradient(to right, #ffffff, #fff6f6);
+  --bg-img: linear-gradient(to right, #ff7053, #ff0c0c);
   --logo-size: 100px;
   --menu-item-size: 80px;
   --menu-item-sep: -110px;
   --menu-item-fs: 2.5rem;
 
   /* %%%% BG %%%%%% */
-  --primary-color: #dee940;
-  --secondary-color: #488FB1;
-  --third-color: #4FD3C4;
+  --primary-color: #f3ff525f;
+  --secondary-color: #4890b164;
+  --third-color: #4fd3c355;
 
 
   --redes-size: clamp(3rem, 9vw, 12rem);
@@ -55,13 +55,13 @@ div.bg--color {
 }
 
 .bg--color span {
-  width: 50vmin;
-  height: 50vmin;
+  width: 75vmin;
+  height: 75vmin;
   backface-visibility: hidden;
   position: absolute;
   animation: move 6s linear infinite;
   z-index:-20;
-  box-shadow: -40vmin 0 215vmin currentColor;
+  box-shadow: -40vmin 0 60vmin currentColor;
   
 }
 
