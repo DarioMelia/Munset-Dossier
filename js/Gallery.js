@@ -23,8 +23,7 @@ sliders.forEach(slider => {
   setScrollWheelEvent(slider)
   cloneAndApendChildren(slider,childrenCount,true)
   
-  
-
+ 
   slider.addEventListener("scroll", e => {
     if (e.target.clientWidth + e.target.scrollLeft >= e.target.scrollWidth) {
       console.log("Llegaste al final")
@@ -36,14 +35,9 @@ sliders.forEach(slider => {
     //   e.target.scrollLeft = e.target.scrollWidth
       
     }
+
   })
 })
-
-
-
-
-
-
 
 
 
@@ -53,7 +47,7 @@ sliders.forEach(slider => {
   
     childrenClones.forEach((ch,i)=>{
         if(i<count){
-            console.log(i)
+           
             ch.addEventListener("click",squaresClickHandler)
             atEnd?parent.appendChild(ch):parent.insertBefore(ch,children[0])
             
@@ -112,3 +106,7 @@ sliders.forEach(slider => {
       }, 300)
     })
   }
+
+
+  
+  

@@ -101,6 +101,7 @@
       max-width: 90%;
     }
 
+
     /* %% GALLERY %% */
     #galeria .slider{
       width: 100%;
@@ -195,6 +196,14 @@
       border-radius: 5px;
       z-index: 4;
     }
+
+    iframe.square{
+      flex: 1 0 90vw;
+      height: 40vh;
+      filter: saturate(120%);
+      border-radius: 10px;
+      z-index: 4;
+    }
     
   }
 
@@ -208,10 +217,5 @@
   }
 
   @media (hover:none){
-    iframe.square{
-      flex: 1 0 90vw;
-      filter: saturate(120%);
-      border-radius: 5px;
-      z-index: 4;
-    }
+    
   }

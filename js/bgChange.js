@@ -2,11 +2,14 @@ const body = document.querySelector("body")
 const checkBox = document.querySelector("input[type='checkbox']")
 const logo = checkBox.nextElementSibling
 const bgDiv = document.querySelector(".bg--color")
+// const title = document.querySelector(".title-name")
 
 
 
 checkBox.addEventListener("click", e => {
   body.classList.add("color-bg")
+  // title.classList.add("open")
+
   
   
 })
@@ -14,6 +17,7 @@ checkBox.addEventListener("click", e => {
 const menuItems = document.querySelectorAll(".menu-item a")
 menuItems.forEach(item => {
   item.addEventListener("mouseover", e => {
+    // if(title.classList.contains("open"))title.classList.remove("open")
     changeBg(e.target.name)
   })
 })
@@ -117,6 +121,7 @@ function changeBg(name) {
       setAndResetBg("linear-gradient(to right, #f5e662, #ade645) ")
       break
   }
+  
 }
 
 function setCssVar(varName, value) {
@@ -167,8 +172,10 @@ function startMiembrosAnimation(){
   let delay = 0
   let floatDelay = 0
   miembros.forEach(mi => {
+    let mImg = mi.querySelector("img")
     mi.style.animation = `miembroImageAnimation 1s ${delay}s ease-in-out forwards`
     mi.querySelector("img").style.animation = `float 5s ${floatDelay}s infinite`
+    mImg.src = `./css/images/miembro-${mImg.getAttribute("data-name")}.jpeg`
     delay+= 0.3
     floatDelay+=1.2
   })
@@ -200,10 +207,16 @@ function startInfoAnimation(){
 }
 
 function startGaleriaAnimation(){
+  const sliders = document.querySelectorAll(".slider")
+  const squares = document.querySelectorAll(".slider.fotos .square")
   sliders.forEach(s=>{
     
     s.style.animation = "miembroImageAnimation 1.2s cubic-bezier(.18,.42,.22,1.36) forwards"
-  }) 
+  })
+  
+  squares.forEach(sq =>{
+    sq.style.background=`url(${sq.getAttribute("data-src")})`   
+  })
 }
 
 function resetAnimations(){

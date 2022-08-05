@@ -18,9 +18,11 @@
 </head>
 
 <body>
+  <!-- <img class="title-name"src="./css/images/title-name.png" alt="LISSANDRA"> -->
   <div class="bg bg--white">
   </div>
   <div class="bg bg--color">
+    
     <span></span>
     <span></span>
     <span></span>
@@ -31,27 +33,27 @@
     <span></span>
     <span></span>
     <span></span>
- 
   </div>
+
   <nav class="menu">
-    <input class="menu-toggler" type="checkbox" />
+    <input id="menu-toggler" class="menu-toggler" type="checkbox" />
+    <label for="menu-toggler" style="opacity:0">Abrir menu</label>
     <img class="logo" src="./css/images/logo.png" alt="" />
-    <label for="menu-toggler"></label>
     <ul>
       <li class="menu-item">
-        <a class="fa-solid fa-headphones-simple" name="escuchar" href="#escuchar"></a>
+        <a class="fa-solid fa-headphones-simple" name="escuchar" ></a>
       </li>
       <li class="menu-item">
-        <a class="fa-solid fa-people-group" name="miembros" href="#mimebros"></a>
+        <a class="fa-solid fa-people-group" name="miembros" ></a>
       </li>
       <li class="menu-item">
-        <a class="fa-solid fa-info-circle" name="info" href="#info"></a>
+        <a class="fa-solid fa-info-circle" name="info" ></a>
       </li>
       <li class="menu-item">
-        <a class="fa-solid fa-icons" name="galeria" href="#galeria"></a>
+        <a class="fa-solid fa-icons" name="galeria" ></a>
       </li>
       <li class="menu-item">
-        <a class="fa-brands fa-instagram" name="redes" href="#redes"></a>
+        <a class="fa-brands fa-instagram" name="redes" ></a>
       </li>
     </ul>
   </nav>
@@ -61,24 +63,24 @@
     <h1 class="section__title">Miembros</h1>
     <div class="miembros__grid">
       <div class="miembro diego">
-        <img src="./css/images/miembro-diego.jpeg" alt="">
+        <img src="./css/images/loader.svg" alt="Diego Alifa Serrano, teclista" data-name="diego">
         <h3>Diego Alifa Serrano</h3>
         </img>
       </div>
       <div class="miembro sara">
-        <img src="./css/images/miembro-sara.jpeg" alt="">
+        <img src="./css/images/loader.svg" alt="Sara Alvarez Corral, vocalista" data-name="sara">
         <h3>Sara Álvarez Corral</h3>
       </div>
       <div class="miembro dario">
-        <img src="./css/images/miembro-dario.jpeg" alt="">
+        <img src="./css/images/loader.svg" alt="Darío Meliá Basus, bajista" data-name="dario">
         <h3>Darío Meliá Basus</h3>
       </div>
       <div class="miembro fran">
-        <img src="./css/images/miembro-fran.jpeg" alt="">
+        <img src="./css/images/loader.svg" alt="Fran Apellido Guitarrez, guitarrista" data-name="Fran">
         <h3>Fran Apellido Guitarrez</h3>
       </div>
       <div class="miembro jaime">
-        <img src="./css/images/miembro-jaime.jpeg" alt="">
+        <img src="./css/images/loader.svg" alt="Jaime Crisostomo Rodriguez, baterista" data-name="Jaime">
         <h3>Jaime Crisóstomo Rodríguez</h3>
       </div>
     </div>
@@ -90,7 +92,7 @@
   <section class="section-overlay" id="escuchar">
     <div class="escuchar__container">
       <div class="random-btn">
-        <button id="play-random">
+        <button id="play-random" aria-label="Boton cancion aleatoria">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="213.7px" height="213.7px"
             overflow="visible" viewBox="0 0 214 214" enable-background="new 0 0 213.69 213.69" xml:space="preserve">
@@ -153,36 +155,32 @@
 
   <section class="section-overlay" id="galeria">
     <div class="slider fotos">
-      <div class="square" style="background: url('./css/images/d-f.jpg')"></div>
-      <div class="square" style="background: url('./css/images/publico.jpg')"></div>
-      <div class="square" style="background: url('./css/images/all.jpeg')"></div>
-      <div class="square" style="background: url('./css/images/d-s.JPG')"></div>
-      <div class="square" style="background: url('./css/images/di-j.JPG')"></div>
-      <!-- <div class="square" style="background: url('https://picsum.photos/500/300?random=6')"></div>
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=7')"></div>
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=8')"></div>
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=9')"></div>
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=10')"></div>
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=11')"></div> -->
+      <div class="square" style="background: url('./css/images/loader.svg')" data-src="./css/images/d-f.jpg"></div>
+      <div class="square" style="background: url('./css/images/loader.svg')" data-src="./css/images/publico.jpg"></div>
+      <div class="square" style="background: url('./css/images/loader.svg')" data-src="./css/images/all.jpeg"></div>
+      <div class="square" style="background: url('./css/images/loader.svg')" data-src="./css/images/d-s.JPG"></div>
+      <div class="square" style="background: url('./css/images/loader.svg')" data-src="./css/images/di-j.JPG"></div>
     </div>
+    
     <div class="slider videos">
-      <!-- <iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe> -->
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=1')"></div>
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=2')"></div>
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=3')"></div>
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=4')"></div>
-      <div class="square" style="background: url('https://picsum.photos/500/300?random=5')"></div>
+      <iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      <iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/NwVtIPeYIeQ"></iframe>
+      <iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/B2665MFFbdY"></iframe>
+      <iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/fhDfmUnN1vY"></iframe>
+      <iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/rhxQoDlt2AU"></iframe>
+      <!-- <div class="square" style="background: url('https://picsum.photos/500/300?random=1')"></div> -->
+      
      </div>
 
   </section>
 
 
   <section class="section-overlay" id="redes">
-    <a href="https://twitter.com/LISSANDRA_Music" target="_blank" class="fa-brands fa-twitter"></a>
-    <a href="https://www.instagram.com/lissandra_oficial/" target="_blank" class="fa-brands fa-instagram"></a>
-    <a href="https://www.facebook.com/lissandraofficial/" target="_blank" class="fa-brands fa-facebook"></a>
-    <a href="mailto:lissandras.eye.oficial@gmail.com" target="_blank" class="fa-solid fa-envelope"></a>
-    <a href="https://www.tiktok.com/@lissandra_oficial" target="_blank" class="fa-brands fa-tiktok"></a>
+    <a href="https://twitter.com/LISSANDRA_Music" target="_blank" class="fa-brands fa-twitter" aria-label="link al perfil de twitter de Lissandra"></a>
+    <a href="https://www.instagram.com/lissandra_oficial/" target="_blank" class="fa-brands fa-instagram" aria-label="link al perfil de instagram de Lissandra"></a>
+    <a href="https://www.facebook.com/lissandraofficial/" target="_blank" class="fa-brands fa-facebook" aria-label="link al perfil de facebook de Lissandra"></a>
+    <a href="mailto:lissandras.eye.oficial@gmail.com" target="_blank" class="fa-solid fa-envelope" aria-label="Escribele un correo a Lissandra"></a>
+    <a href="https://www.tiktok.com/@lissandra_oficial" target="_blank" class="fa-brands fa-tiktok" aria-label="link al perfil de tiktok de Lissandra"></a>
   </section>
 
   <script src="./js/bgChange.js"></script>

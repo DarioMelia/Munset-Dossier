@@ -35,7 +35,18 @@ body.color-bg div.bg--color {
 body:not(.color-bg) div.bg--white {
   opacity: 1;
 }
-
+/* .title-name{
+  position: fixed;
+  display: none;
+  width: 80vw;
+  top: 10vh;
+  left: 10vw;
+  right: 10vw;
+}
+.title-name.open{
+  display:block;
+  filter: invert(100%);
+} */
 div.bg {
   width: 100vw;
   height: 100vh;
@@ -765,6 +776,9 @@ div.bg--color {
   cursor: pointer;
 }
 
+iframe.square.isScrolling{
+  pointer-events: none;
+}
 
 
 
