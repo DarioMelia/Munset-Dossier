@@ -78,9 +78,6 @@ sliders.forEach(slider => {
   
 
 
-
-
-
   function squaresClickHandler(e){
     let isBig = false;
     
