@@ -16,6 +16,7 @@
   --primary-color: #f3ff525f;
   --secondary-color: #4890b164;
   --third-color: #4fd3c355;
+  --bg-anim-time: 15s;
 
 
   --redes-size: clamp(3rem, 9vw, 12rem);
@@ -80,7 +81,7 @@ div.bg--color {
   color: var(--primary-color);
   top: 47%;
   left: 70%;
-  animation-duration: 10.5s;
+  animation-duration: calc(var(--bg-anim-time) + 0.5s);
   animation-delay: -1.3s;
   transform-origin: 23vw -17vh;
   
@@ -89,7 +90,7 @@ div.bg--color {
   color: var(--secondary-color);
   top: 67%;
   left: 35%;
-  animation-duration: 15s;
+  animation-duration: calc(var(--bg-anim-time) + 5s);
   animation-delay: -8.3s;
   transform-origin: 22vw 16vh;
   
@@ -98,7 +99,7 @@ div.bg--color {
   color: var(--primary-color);
   top: 53%;
   left: 90%;
-  animation-duration: 15.6s;
+  animation-duration: calc(var(--bg-anim-time) + 5.6s);
   animation-delay: -10.4s;
   transform-origin: 23vw -18vh;
   
@@ -107,7 +108,7 @@ div.bg--color {
   color: var(--primary-color);
   top: 65%;
   left: 79%;
-  animation-duration: 14.3s;
+  animation-duration: calc(var(--bg-anim-time) + 4.3s);
   animation-delay: -9s;
   transform-origin: -23vw -10vh;
   
@@ -116,7 +117,7 @@ div.bg--color {
   color: var(--third-color);
   top: 75%;
   left: 95%;
-  animation-duration: 13.6s;
+  animation-duration: calc(var(--bg-anim-time) + 3.6s);
   animation-delay: -7.1s;
   transform-origin: -21vw -10vh;
   
@@ -125,7 +126,7 @@ div.bg--color {
   color: var(--primary-color);
   top: 45%;
   left: 59%;
-  animation-duration: 10.9s;
+  animation-duration: calc(var(--bg-anim-time) + 0.9s);
   animation-delay: -10.4s;
   transform-origin: -5vw -20vh;
   
@@ -134,7 +135,7 @@ div.bg--color {
   color: var(--secondary-color);
   top: 54%;
   left: 91%;
-  animation-duration: 14.4s;
+  animation-duration: calc(var(--bg-anim-time) + 4.4s);
   animation-delay: -6.1s;
   transform-origin: -8vw 25vh;
   
@@ -143,7 +144,7 @@ div.bg--color {
   color: var(--primary-color);
   top: 31%;
   left: 37%;
-  animation-duration: 11.9s;
+  animation-duration: calc(var(--bg-anim-time) + 1.9s);
   animation-delay: -6.6s;
   transform-origin: 18vw -12vh;
   
@@ -152,7 +153,7 @@ div.bg--color {
   color: var(--primary-color);
   top: 30%;
   left: 77%;
-  animation-duration: 11.2s;
+  animation-duration: calc(var(--bg-anim-time) + 1.2s);
   animation-delay: -8.6s;
   transform-origin: 16vw -14vh;
   
@@ -161,7 +162,7 @@ div.bg--color {
   color: var(--secondary-color);
   top: 23%;
   left: 31%;
-  animation-duration: 12.6s;
+  animation-duration: calc(var(--bg-anim-time) + 2.6s);
   animation-delay: -0.5s;
   transform-origin: -7vw -5vh;
   
@@ -186,6 +187,7 @@ div.bg--color {
 }
 .logo {
   position: absolute;
+  
   display: inline-block;
   top: 0;
   bottom: 0;
@@ -375,18 +377,18 @@ div.bg--color {
   letter-spacing: 2px;
   text-shadow: 3px 3px 3px rgba(36, 36, 36, 0.83);
 }
-.miembro.diego h3,
+.miembro.celia h3,
 .miembro.sara h3 {
   top: -1.6em;
   white-space: nowrap;
 }
-.miembro.diego {
+.miembro.celia {
   grid-column: 4 / span 5;
   grid-row: 5 / span 8;
   transform: translate(70%, 45%) scale(0.5);
 }
 .miembro.sara {
-  grid-column: 10 / span 5;
+  grid-column: 10 / span 4;
   grid-row: 5 / span 6;
   transform: translate(-70%, 90%) scale(0.5);
 }
@@ -398,11 +400,11 @@ div.bg--color {
 }
 .miembro.fran {
   grid-column: 2 / span 3;
-  grid-row: 9 / span 4;
+  grid-row: 7 / span 4;
   transform: translate(70%, -45%) scale(0.5);
 }
 .miembro.jaime {
-  grid-column: 7 / span 5;
+  grid-column: 6 / span 5;
   grid-row: 11 / span 5;
   transform: translate(-20%, -45%) scale(0.5);
 }
@@ -426,11 +428,13 @@ div.bg--color {
 }
 
 .miembro.fran.full{
-  max-width: 700px;
+  max-width: 600px;
 }
 .miembro.dario.full{
-  max-width: 450px;
+  max-width: 550px;
 }
+
+
 
 
 
