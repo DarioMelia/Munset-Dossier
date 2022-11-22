@@ -8,9 +8,11 @@ const bgDiv = document.querySelector(".bg--color")
 
 checkBox.addEventListener("click", e => {
   body.classList.add("color-bg")
-  // title.classList.add("open")
-
-  
+  //checkeamos por un opverlay abierto, para solo hacer esto a partir de entonces
+  const openOverlay = document.querySelector(".section-overlay.open")
+  if(openOverlay){
+    checkBox.classList.contains("toggler-away")?checkBox.classList.remove("toggler-away"):checkBox.classList.add("toggler-away") 
+  }
   
 })
 
@@ -61,9 +63,6 @@ infoBtns.forEach(btn => {
       if(i.classList.contains("open")) i.classList.remove("open")
      })
      content.classList.add("open")
-     logo.classList.add("z-2") // remove en resetAnimations()
-     checkBox.classList.add("z-2")
-     
   })
 })
 
@@ -71,7 +70,6 @@ infoContents.forEach(i=>{
   i.addEventListener("click", e =>{
     if(i.classList.contains("open")) {
       i.classList.remove("open")
-      checkBox.classList.remove("z-2")
     }
   })
 })
@@ -146,6 +144,7 @@ sections.forEach(s => {
   s.addEventListener("click", e => {
     if(timer) clearTimeout(timer)
     if(checkBox.checked) checkBox.checked = false
+    checkBox.classList.add("toggler-away")
   })
 })
 
@@ -156,12 +155,14 @@ if(timer) clearTimeout(timer)
   section.classList.add("open")
   timer = setTimeout(() => {
       checkBox.checked ? checkBox.checked=false : null
+      checkBox.classList.add("toggler-away")
   }, 1500);
 }
 
 function closeOpenOverlay() {
   const openOverlay = document.querySelector(".section-overlay.open")
   openOverlay ? openOverlay.classList.remove("open") : null
+  checkBox.classList.remove("toggler-away")
 }
 
 
@@ -179,6 +180,7 @@ function startMiembrosAnimation(){
     delay+= 0.3
     floatDelay+=1.2
   })
+  
 }
 
 function startEscucharAnimation(){
@@ -236,10 +238,6 @@ function resetAnimations(){
 
   // %% INFO %%
   document.querySelectorAll(".info__btn").forEach(btn => btn.style.animation ="" )
-  if(logo.classList.contains("z-2")) {
-    logo.classList.remove("z-2")
-    checkBox.classList.remove("z-2")
-  }
 
   // %% GALERIA %%
   sliders.forEach(s=>s.style.animation = "") 

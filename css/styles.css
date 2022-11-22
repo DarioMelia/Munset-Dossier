@@ -168,17 +168,31 @@ div.bg--color {
   
 }
 
-  
+.menu-toggler,.logo{
+  position: absolute;
+  transition: transform 200ms ease-in, 
+              right 500ms ease-in-out, 
+              bottom 500ms ease-in-out;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom:0;
+  margin: auto;
+}
+.menu-toggler.toggler-away,
+.menu-toggler.toggler-away ~ img.logo
+{
+  animation: none;
+  right:100vw;
+  bottom: calc(100vh - var(--logo-size));
+  transform: scale(0.6);
+
+}
+
 
 
 .menu-toggler {
-  position: absolute;
   display: block;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
   width: var(--logo-size);
   height: var(--logo-size);
   z-index: 2;
@@ -186,14 +200,7 @@ div.bg--color {
   cursor: pointer;
 }
 .logo {
-  position: absolute;
-  
   display: inline-block;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
   padding: 8px;
   width: var(--logo-size);
   background-color: white;
@@ -201,18 +208,11 @@ div.bg--color {
   cursor: pointer;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
   animation: pulse 2s infinite;
-  transition: transform 200ms ease-in, opacity 230ms ease-out;
+  
 }
 
 .menu-toggler:hover ~ .logo   {
   animation:none;
-  transform: scale(1.06);
-  
-}
-
-
-.logo:not(.z-2){
-  z-index: initial;
 }
 
 
@@ -793,10 +793,6 @@ iframe.square.isScrolling{
 
 .display-none{
   display: none;
-}
-
-.z-2{
-  z-index:-2;
 }
 
 .low-opacity{
