@@ -25,9 +25,12 @@
   --info-btn-height: 57px;
   --info-btn-fs: 2rem;
 }
-
+html{
+  height: 100%;
+}
 body {
   overflow: hidden;
+
 }
 
 body.color-bg div.bg--color {
@@ -182,9 +185,10 @@ div.bg--color {
 .menu-toggler.toggler-away,
 .menu-toggler.toggler-away ~ img.logo
 {
+  position: fixed;
   animation: none;
   right:100vw;
-  bottom: calc(100vh - var(--logo-size));
+  bottom: calc(100% - var(--logo-size));
   transform: scale(0.6);
 
 }
@@ -558,7 +562,7 @@ div.bg--color {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 100vh;
+  height: 100%;
 
   padding: 5vw;
 }

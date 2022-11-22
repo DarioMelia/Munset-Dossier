@@ -85,9 +85,15 @@
     }
 
     /* %% REDES %% */
-
+    #redes{
+      flex-direction: column;
+      gap: 10vw;
+      flex-wrap: nowrap;
+      
+    }
     #redes a{
       margin-bottom: 2rem;
+      
     }
 
     /* %% INFO %% */
