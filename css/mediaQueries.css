@@ -6,6 +6,9 @@
       --menu-item-fs: 2rem;
     }
 
+    .loading-screen img{
+      width:80%;
+    }
     div.escuchar__links{
       height: 22vh;
       flex-direction: column;

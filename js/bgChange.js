@@ -2,9 +2,16 @@ const body = document.querySelector("body")
 const checkBox = document.querySelector("input[type='checkbox']")
 const logo = checkBox.nextElementSibling
 const bgDiv = document.querySelector(".bg--color")
+
 // const title = document.querySelector(".title-name")
 
-
+window.addEventListener("load",e=>{
+  const lsClasses = document.querySelector(".loading-screen").classList
+  lsClasses.add("low-opacity")
+  setTimeout(() => {
+    lsClasses.add("display-none")
+  }, 500);
+})
 
 checkBox.addEventListener("click", e => {
   body.classList.add("color-bg")
