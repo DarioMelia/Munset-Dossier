@@ -26,8 +26,11 @@ checkBox.addEventListener("click", e => {
 const menuItems = document.querySelectorAll(".menu-item a")
 menuItems.forEach(item => {
   item.addEventListener("mouseover", e => {
-    if(!document.querySelector(".section-overlay.pen")){body.classList.add("color-bg")}
     changeBg(e.target.name)
+    if(!document.querySelector(".section-overlay.pen")){
+      body.classList.add("color-bg")
+      bgDiv.classList.add("start")
+    }
   })
 })
 
@@ -35,28 +38,15 @@ menuItems.forEach(item => {
 const miembros = document.querySelectorAll(".miembro")
 
 document.getElementById("miembros").addEventListener("click", e => {
-  let isRemoved
-  miembros.forEach(m => {
-    if(m.classList.contains("full")){
-      m.classList.remove("full")
-      logo.classList.remove("low-opacity")
-      checkBox.classList.remove("no-mouse")
-      isRemoved = true
+  let mbr = e.target.parentElement 
+  if(mbr.classList.contains("miembro")){
+    if(mbr.classList.contains("full")){
+      mbr.classList.remove("full")
+    }else{
+      mbr.classList.add("full")
     }
-  })
-
-  if(e.target.parentElement.classList.contains("miembro")){
-    let mbr = e.target.parentElement
-    if(Array.from(miembros).filter(mi => mi.classList.contains("full")).length === 0){
-      if(!isRemoved){
-        mbr.classList.add("full")
-        logo.classList.add("low-opacity")
-        checkBox.classList.add("no-mouse")
-      }
-    }
-  
   }
-
+  miembros.forEach(m => m === mbr?null:m.classList.remove("full"))
 })
 
 
@@ -82,8 +72,6 @@ infoContents.forEach(i=>{
 })
 
 
-
-  
 
 
 // %%%%%%%%%%%%%%% BG CHANGE %%%%%%%%%%%%%%%%%

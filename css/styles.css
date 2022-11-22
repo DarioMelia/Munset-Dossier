@@ -84,7 +84,7 @@ div.bg--white {
   position:absolute;
   margin:0 auto;
 }
-.bubble-gif img{
+.bubble-gif video{
   width: calc(var(--logo-size) *2);
   height: calc(var(--logo-size) *2);
  
@@ -100,10 +100,13 @@ div.bg--color {
   height: 75vmin;
   backface-visibility: hidden;
   position: absolute;
-  animation: move 6s linear infinite;
+ 
   z-index:-20;
   box-shadow: -40vmin 0 60vmin currentColor;
-  
+}
+
+.bg--color.start span{
+  animation: move 6s linear infinite;
 }
 
 .bg--color span:nth-child(1) {
@@ -197,6 +200,9 @@ div.bg--color {
   
 }
 
+nav.menu{
+  height:0;
+}
 .menu-toggler,.logo{
   position: absolute;
   transition: transform 200ms ease-in, 
@@ -340,7 +346,7 @@ div.bg--color {
 
 .section-overlay {
   width: 100vw;
-  max-height: 100vh;
+  height:100%;
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -765,7 +771,7 @@ div.bg--color {
 
 #galeria{
   display:flex;
-  height: calc(100vh - calc(100vh - 100%));
+  
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
