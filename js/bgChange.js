@@ -3,7 +3,6 @@ const checkBox = document.querySelector("input[type='checkbox']")
 const logo = checkBox.nextElementSibling
 const bgDiv = document.querySelector(".bg--color")
 
-// const title = document.querySelector(".title-name")
 
 window.addEventListener("load",e=>{
   const lsClasses = document.querySelector(".loading-screen").classList
@@ -14,10 +13,11 @@ window.addEventListener("load",e=>{
 })
 
 checkBox.addEventListener("click", e => {
-  body.classList.add("color-bg")
+  
   //checkeamos por un opverlay abierto, para solo hacer esto a partir de entonces
   const openOverlay = document.querySelector(".section-overlay.open")
   if(openOverlay){
+    
     checkBox.classList.contains("toggler-away")?checkBox.classList.remove("toggler-away"):checkBox.classList.add("toggler-away") 
   }
   
@@ -26,7 +26,7 @@ checkBox.addEventListener("click", e => {
 const menuItems = document.querySelectorAll(".menu-item a")
 menuItems.forEach(item => {
   item.addEventListener("mouseover", e => {
-    // if(title.classList.contains("open"))title.classList.remove("open")
+    if(!document.querySelector(".section-overlay.pen")){body.classList.add("color-bg")}
     changeBg(e.target.name)
   })
 })

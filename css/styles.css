@@ -50,18 +50,7 @@ body.color-bg div.bg--color {
 body:not(.color-bg) div.bg--white {
   opacity: 1;
 }
-/* .title-name{
-  position: fixed;
-  display: none;
-  width: 80vw;
-  top: 10vh;
-  left: 10vw;
-  right: 10vw;
-}
-.title-name.open{
-  display:block;
-  filter: invert(100%);
-} */
+
 div.bg {
   width: 100vw;
   height: 100%;
@@ -211,7 +200,7 @@ div.bg--color {
 .menu-toggler,.logo{
   position: absolute;
   transition: transform 200ms ease-in, 
-              right 500ms ease-in-out, 
+              left 500ms ease-in-out, 
               bottom 500ms ease-in-out;
   top: 0;
   right: 0;
@@ -224,7 +213,7 @@ div.bg--color {
 {
   position: fixed;
   animation: none;
-  right:100vw;
+  left: calc(100% - var(--logo-size));
   bottom: calc(100% - var(--logo-size));
   transform: scale(0.6);
 }
