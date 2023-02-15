@@ -36,7 +36,7 @@ sliders.forEach(slider => {
       
     }
 
-  })
+  },{passive: true})
 })
 
 
@@ -101,7 +101,7 @@ sliders.forEach(slider => {
       timer = setTimeout(() => {
         slider.classList.remove("no-scroll-snap")
       }, 300)
-    })
+    },{passive: true})
   }
 
 
