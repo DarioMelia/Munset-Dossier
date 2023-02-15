@@ -3,6 +3,11 @@
 const sliders = document.querySelectorAll(".slider")
 const galeria = document.getElementById("galeria")
 const squares = galeria.querySelectorAll(".square")
+const iframeHTML = `<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/AH3cARZh4OM"></iframe>
+<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/LstgEDrQnE4"></iframe>
+<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/6j1URc3EO4k"></iframe>
+<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/fhDfmUnN1vY"></iframe>
+<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/rhxQoDlt2AU"></iframe> `
 
 // sliders[1].scrollLeft = sliders[1].scrollWidth //llevar el slider de fotos al final
 
