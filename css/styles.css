@@ -453,8 +453,14 @@ nav.menu{
   position: absolute;
   top: 0;bottom:0;right:0;left:0;
   margin: 10vh auto;
-  max-width: 600px;
-  top: calc(50vh - 50%);
+  max-width: 90vw;
+  max-height: 80vh;
+  
+}
+.miembro.full img{
+  object-fit: cover;
+  max-height:100%;
+  object-position: 15% 15%;
 }
 
 .miembro.full h3{
@@ -464,13 +470,6 @@ nav.menu{
   z-index: -1;
   color: black;
   top: -1.6em;
-}
-
-.miembro.fran.full{
-  max-width: 600px;
-}
-.miembro.dario.full{
-  max-width: 550px;
 }
 
 
