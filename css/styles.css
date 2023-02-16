@@ -813,12 +813,16 @@ nav.menu{
   transition: border-radius 250ms ease-in-out,flex 250ms;
   filter: saturate(25%);
   cursor: pointer;
+  background-position: center;
 }
-
+.video:not(.square){
+  flex: 1 0 500px;
+}
 iframe.square{
   overflow:hidden;
-  width:300px;
-  height:300px;
+  border-radius: 10px;
+  width: 100%;
+  
 }
 
 iframe.square.isScrolling{

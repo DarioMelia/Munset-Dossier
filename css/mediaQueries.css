@@ -124,6 +124,9 @@
       scroll-snap-stop: always;
     }
 
+    .video:not(.square){
+      flex: 1 0 90vw;
+    }
     :root{
       
       --info-btn-width: 220px;
@@ -251,8 +254,4 @@
       border-radius: 5px;
       z-index: 4;
     }
-  }
-
-  @media (hover:none){
-    
   }
