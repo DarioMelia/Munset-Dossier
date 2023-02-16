@@ -815,6 +815,12 @@ nav.menu{
   cursor: pointer;
 }
 
+iframe.square{
+  overflow:hidden;
+  width:300px;
+  height:300px;
+}
+
 iframe.square.isScrolling{
   pointer-events: none;
 }

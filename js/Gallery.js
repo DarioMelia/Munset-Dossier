@@ -3,11 +3,12 @@
 const sliders = document.querySelectorAll(".slider")
 const galeria = document.getElementById("galeria")
 const squares = galeria.querySelectorAll(".square")
-const iframeHTML = `<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/AH3cARZh4OM"></iframe>
-<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/LstgEDrQnE4"></iframe>
-<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/6j1URc3EO4k"></iframe>
-<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/fhDfmUnN1vY"></iframe>
-<iframe class="square" allowfullscreen="true" frameborder="0" src="https://www.youtube.com/embed/rhxQoDlt2AU"></iframe> `
+const vidSquares = galeria.querySelectorAll(".square.video")
+
+const iframeHTML = [`<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/6j1URc3EO4k"></iframe>`,
+`<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/yRV1pow2TQk"></iframe>`,
+`<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/AH3cARZh4OM"></iframe>`,
+`<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/LstgEDrQnE4"></iframe>`]
 
 // sliders[1].scrollLeft = sliders[1].scrollWidth //llevar el slider de fotos al final
 
@@ -18,9 +19,7 @@ galeria.addEventListener("click",e=>{
     bigSquare[0]?bigSquare[0].classList.remove("big"):null
   }
 })
-squares.forEach(i=>{
-    i.addEventListener("click",squaresClickHandler)
-  })
+
 
 
 sliders.forEach(slider => {
@@ -44,7 +43,14 @@ sliders.forEach(slider => {
   },{passive: true})
 })
 
-
+squares.forEach(i=>{
+  if(i.classList.contains("video")){
+    i.addEventListener("click",iframeLazyLoading)
+  }else{
+    i.addEventListener("click",squaresClickHandler)
+  }
+    
+  })
 
   function cloneAndApendChildren(parent,count,atEnd){
     const children = parent.children
@@ -52,12 +58,18 @@ sliders.forEach(slider => {
   
     childrenClones.forEach((ch,i)=>{
         if(i<count){
-           
+          if(ch.classList.contains("video")){
+            ch.addEventListener("click",iframeLazyLoading)
+          }else{
+            ch.addEventListener("click",squaresClickHandler)
+          }
             ch.addEventListener("click",squaresClickHandler)
             atEnd?parent.appendChild(ch):parent.insertBefore(ch,children[0])
             
           }
     })
+
+    
   }
 
   function deleteFirstChildrenAddNew(parent, count){
@@ -107,6 +119,15 @@ sliders.forEach(slider => {
         slider.classList.remove("no-scroll-snap")
       }, 300)
     },{passive: true})
+  }
+
+  function iframeLazyLoading(e){
+    const i = parseInt(this.getAttribute("data-idx"))
+    // this.removeEventListener("click",iframeLazyLoading,false)
+    this.style = ""
+    this.classList.remove("square")
+    this.innerHTML = iframeHTML[i]
+    console.log("aquí")
   }
 
 
