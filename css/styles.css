@@ -815,12 +815,14 @@ nav.menu{
   cursor: pointer;
   background-position: center;
 }
-.video:not(.square){
+/* .video:not(.square){
   flex: 1 0 500px;
-}
+  position: relative;
+} */
+
 iframe.square{
-  overflow:hidden;
-  border-radius: 10px;
+  
+  
   width: 100%;
   
 }
@@ -828,9 +830,6 @@ iframe.square{
 iframe.square.isScrolling{
   pointer-events: none;
 }
-
-
-
 
 
 

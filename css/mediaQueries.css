@@ -124,9 +124,15 @@
       scroll-snap-stop: always;
     }
 
-    .video:not(.square){
+    .video{
       flex: 1 0 90vw;
+      border-radius:10px;
     }
+    .video iframe{
+      border-radius:10px;
+      filter:saturate(100%)
+    }
+  
     :root{
       
       --info-btn-width: 220px;
@@ -163,6 +169,11 @@
       grid-row: 12 / span 6;
       
     }
+    .video{
+      flex: 1 0 50vw;
+    }
+    
+
  
      
   }
@@ -236,14 +247,10 @@
       border-radius: 5px;
       z-index: 4;
     }
-
-    iframe.square{
-      flex: 1 0 90vw;
-      height: 40vh;
-      filter: saturate(120%);
-      border-radius: 10px;
-      z-index: 4;
+    .square.video{
+      filter: saturate(100%)
     }
+
     
   }
 
@@ -254,4 +261,7 @@
       border-radius: 5px;
       z-index: 4;
     }
+    /* .video:not(.square):hover iframe{
+      filter: saturate(100%);
+    } */
   }
