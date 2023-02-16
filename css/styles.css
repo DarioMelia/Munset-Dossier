@@ -22,7 +22,7 @@
 
   --info-btn-width: 180px;
   --info-btn-height: 57px;
-  --info-btn-fs: 2rem;
+  --info-btn-fs: 1.8rem;
 }
 html{
   height: 100%;
@@ -276,25 +276,29 @@ nav.menu{
   pointer-events: auto;
 }
 
+
+
+
+
 .menu-item:nth-child(1) a {
   transform: rotate(-18deg);
-  background: linear-gradient(to right, #38e05ff5, #38e0caf5);
+  background: linear-gradient(to right, #c13584f7, #ff1783f4);
 }
 .menu-item:nth-child(2) a {
   transform: rotate(-90deg);
-  background: linear-gradient(to right, #f5c842f4, #fa6746f3);
+  background: linear-gradient(to right, #38e05ff5, #38e0caf5);
 }
 .menu-item:nth-child(3) a {
   transform: rotate(-162deg);
-  background: linear-gradient(to right, #a946faf8, #fd7afff4);
+  background: linear-gradient(to right, #45ffd7f9, #5757f4f3);
 }
 .menu-item:nth-child(4) a {
   transform: rotate(-234deg);
-  background: linear-gradient(to right, #45ffd7f9, #5757f4f3);
+  background: linear-gradient(to right, #f5c842f4, #fa6746f3);
 }
 .menu-item:nth-child(5) a {
   transform: rotate(-306deg);
-  background: linear-gradient(to right, #c13584f7, #ff1783f4);
+  background: linear-gradient(to right, #a946faf8, #fd7afff4);
 }
 /* .menu-item:nth-child(6) a {
   transform: rotate(-300deg);
@@ -470,7 +474,9 @@ nav.menu{
 }
 
 
-
+.miembro:not(.full) img:hover{
+  animation: wiggle .7s ease-in-out!important;
+}
 
 
 /*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
@@ -952,18 +958,31 @@ iframe.square.isScrolling{
     transform: translate3d(0, 0, 1px) rotate(360deg);
  }
 }
-/* .bg-fade-animation{
-  animation: bg-fade 1s ease-in-out forwards;
+
+@keyframes wiggle {
+  20% {
+    box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
+    transform: rotate(4deg);
+  }
+  
+  40% {
+    box-shadow:  inset -11px 0 5px 0 rgba(0,0,0,.4);
+    transform: rotate(-7deg);
+  }
+  
+  60% {
+    box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
+    transform: rotate(3deg);
+  }
+  
+  80% {
+    box-shadow:  inset -8px 0 5px 0 rgba(0,0,0,.4);
+    transform: rotate(-2deg);
+  }
+  
+  100% {
+    box-shadow:  inset -7px 0 5px 0 rgba(0,0,0,.4);
+    transform: rotate(0deg);
+  }
 }
 
-@keyframes bg-fade {
-  0%{
-    opacity:1;
-  }
-  50%{
-    opacity:0.4;
-  }
-  100%{
-    opacity:1;
-  }
-} */

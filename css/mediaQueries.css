@@ -134,17 +134,12 @@
     }
   
     :root{
-      
       --info-btn-width: 220px;
       --info-btn-height: 80px;
       --info-btn-fs: 2.8rem;
     }
-
-    
-  
   }
   
-
   @media  (orientation:portrait) and (min-width:600px){
     .miembro img{
       border-width: 6px;
@@ -172,9 +167,6 @@
     .video{
       flex: 1 0 50vw;
     }
-    
-
- 
      
   }
   @media (min-width: 1200px) {
@@ -231,7 +223,7 @@
 
 
   @media (hover:none){
-    .info__btn svg rect{
+    /* .info__btn svg rect{
       animation: infoBtnAnimation 9s 3s ease-in-out infinite;
     }
     .info__btn{
@@ -239,7 +231,7 @@
       border-radius: 4px;
       overflow: hidden;
       box-shadow: 5px 5px 12px 2px #48484855;
-    }
+    } */
 
     .square.big{
       flex: 1 0 500px;
@@ -261,7 +253,4 @@
       border-radius: 5px;
       z-index: 4;
     }
-    /* .video:not(.square):hover iframe{
-      filter: saturate(100%);
-    } */
   }
