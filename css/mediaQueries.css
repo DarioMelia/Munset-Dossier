@@ -103,8 +103,12 @@
     .info__container{
       flex-direction: column;
     }
-    .info__text--proyecto .info__content{
+    .info__text--events .info__content{
       margin-left: 0;
+      
+    }
+    .event-card{
+      margin-bottom: 65%;
     }
     .info__content{
       max-width: 90%;
