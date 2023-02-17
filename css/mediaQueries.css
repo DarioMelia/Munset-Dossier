@@ -103,10 +103,10 @@
     .info__container{
       flex-direction: column;
     }
-    .info__text--proyecto .info__text__content{
+    .info__text--proyecto .info__content{
       margin-left: 0;
     }
-    .info__text__content{
+    .info__content{
       max-width: 90%;
     }
 
@@ -197,7 +197,7 @@
       gap: 45vw;
     }
 
-    .info__text__content{
+    .info__content{
       max-width: 487px;
     }
   

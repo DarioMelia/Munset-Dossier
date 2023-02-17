@@ -52,10 +52,10 @@ document.getElementById("miembros").addEventListener("click", e => {
 
 // %%%%%%%%%%%% INFO %%%%%%%%%%%%
 const infoBtns = document.querySelectorAll(".info__btn")
-const infoContents = document.querySelectorAll(".info__text__content")
+const infoContents = document.querySelectorAll(".info__content")
 infoBtns.forEach(btn => {
   btn.addEventListener("click",e=>{
-     const content = e.target.parentElement.parentElement.parentElement.querySelector(".info__text__content")
+     const content = e.target.parentElement.parentElement.parentElement.querySelector(".info__content")
      infoContents.forEach(i=>{
       if(i.classList.contains("open")) i.classList.remove("open")
      })

@@ -734,7 +734,7 @@ nav.menu{
   transform: translate(-180%, 0%) scale(0.7);
 }
 
-.info__text__content{
+.info__content{
   background-color: #ffffff01;
   backdrop-filter: blur(5px);
   position: absolute;
@@ -750,21 +750,39 @@ nav.menu{
   opacity: 0;
 }
 
-.info__text__content.open{
+.info__content.open{
   transform: translateY(0%);
   opacity: 1;
   z-index: 3;
   
 }
 
-.info__text--proyecto .info__text__content{
+.info__text--proyecto .info__content{
   margin-left: 30px;
 }
-
 
 .info__tittle{
   color:rgb(137, 5, 208);
   font-size: 1.5em;
+}
+
+.info__gig-list{
+  list-style: none;
+  padding:0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+.info__gig-list li{
+  padding:.7em;
+  font-size: 1.3rem;
+  background-color: #00000056;
+}
+.info__gig-list li:not(nth-last-child()){
+  border-bottom: 2px solid white;
+}
+.info__gig-list a{
+  text-decoration: none;
+  color:white;
   
 }
 
