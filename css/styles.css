@@ -60,12 +60,14 @@ div.bg {
   opacity: 0;
 }
 div.bg--white {
+  --sky-duration:5s;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  
 }
+
 .title{
   width: 80vw;
   max-width: 1100px;
@@ -238,11 +240,13 @@ nav.menu{
   display: inline-block;
   padding: 8px;
   width: var(--logo-size);
+  height: var(--logo-size);
   background-color: white;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
   animation: pulse 2s infinite;
+  
   
 }
 
@@ -1115,4 +1119,6 @@ iframe.square.isScrolling{
       transform: rotateX(0deg);
   }
 }
+
+
 
