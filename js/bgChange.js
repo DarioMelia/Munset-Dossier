@@ -171,7 +171,7 @@ function startMiembrosAnimation(){
     let mImg = mi.querySelector("img")
     mi.style.animation = `miembroImageAnimation 1s ${delay}s ease-in-out forwards`
     mi.querySelector("img").style.animation = `float 5s ${floatDelay}s infinite`
-    mImg.src = `./css/images/miembro-${mImg.getAttribute("data-name")}.jpeg`
+    mImg.src = `./css/images/miembro-${mImg.getAttribute("data-name")}.webp`
     delay+= 0.3
     floatDelay+=1.2
   })

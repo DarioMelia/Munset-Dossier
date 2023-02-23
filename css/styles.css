@@ -422,8 +422,8 @@ nav.menu{
   white-space: nowrap;
 }
 .miembro.celia {
-  grid-column: 4 / span 5;
-  grid-row: 5 / span 8;
+  grid-column: 5 / span 4;
+  grid-row: 4 / span 4;
   transform: translate(70%, 45%) scale(0.5);
 }
 .miembro.sara {
@@ -438,12 +438,12 @@ nav.menu{
   
 }
 .miembro.fran {
-  grid-column: 2 / span 3;
+  grid-column: 2 / span 4;
   grid-row: 7 / span 4;
   transform: translate(70%, -45%) scale(0.5);
 }
 .miembro.jaime {
-  grid-column: 6 / span 5;
+  grid-column: 7 / span 5;
   grid-row: 11 / span 5;
   transform: translate(-20%, -45%) scale(0.5);
 }
@@ -455,7 +455,9 @@ nav.menu{
   margin: 10vh auto;
   max-width: 90vw;
   max-height: 80vh;
-  
+}
+.miembro.sara.full img{
+  object-position: 0 -0%;
 }
 .miembro.full img{
   object-fit: cover;
@@ -932,10 +934,11 @@ nav.menu{
   border-radius: 50%;
   scroll-snap-align: start;
   background-size: cover !important ;
+  background-position:center !important;
   transition: border-radius 250ms ease-in-out,flex 250ms;
   filter: saturate(25%);
   cursor: pointer;
-  background-position: center;
+  
 }
 /* .video:not(.square){
   flex: 1 0 500px;
@@ -943,10 +946,7 @@ nav.menu{
 } */
 
 iframe.square{
-  
-  
   width: 100%;
-  
 }
 
 iframe.square.isScrolling{

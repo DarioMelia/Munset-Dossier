@@ -5,11 +5,14 @@ const galeria = document.getElementById("galeria")
 const squares = galeria.querySelectorAll(".square")
 const vidSquares = galeria.querySelectorAll(".square.video")
 
-const iframeHTML = [`<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/6j1URc3EO4k?autoplay=1"></iframe>`,
+const iframeHTML = [
+  `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/z2tiQCYf9rg?autoplay=1"></iframe>`,
+  `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/6j1URc3EO4k?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/yRV1pow2TQk?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/AH3cARZh4OM?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/LstgEDrQnE4?autoplay=1"></iframe>`]
 
+vidSquares.forEach((vid,i)=>vid.dataset.iframe = iframeHTML[i])
 // sliders[1].scrollLeft = sliders[1].scrollWidth //llevar el slider de fotos al final
 
 galeria.addEventListener("click", e => {
@@ -124,19 +127,19 @@ function setScrollWheelEvent(slider) {
 }
 
 function iframeLazyLoading(e) {
-  const i = parseInt(this.getAttribute("data-idx"))
+  const i = this.dataset.iframe
   const prevState = this.cloneNode(true)
   this.removeEventListener("click", iframeLazyLoading, false)
   this.style = ""
-  this.innerHTML = iframeHTML[i]
+  this.innerHTML = this.dataset.iframe
   this.addEventListener("mouseleave", e => mouseLeaveHandler(e, prevState, i))
-  console.log("pinchaste, wei")
+ 
 }
 
 function mouseLeaveHandler(e, prev, i) {
   setTimeout(() => {
     e.target.parentNode.replaceChild(prev, e.target)
-    console.log(e.target.getAttribute("data-idx"))
+    
     const newNodes = document.querySelectorAll(`.square[data-idx="${i}"]`)
     newNodes.forEach(node=>node.addEventListener("click", iframeLazyLoading))
   }, 200)
