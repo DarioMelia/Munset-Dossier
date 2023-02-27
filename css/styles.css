@@ -746,7 +746,7 @@ nav.menu{
   cursor:pointer;
   transform: translateY(300%);
   transition: transform 800ms 250ms cubic-bezier(.18,.42,.22,1.36),
-  opacity 800ms;
+  opacity 800ms,background-color .5s;
   box-shadow: 8px 12px 12px 5px rgba(0,0,0,0.5);
   opacity: 0;
   overflow: hidden;
@@ -772,9 +772,11 @@ nav.menu{
   background-color: var(--card-main-clr);
 }
 .info__text--us .info__content{
-  padding: 1em;
+  padding: 2.2em 1.2em;
   background-size: cover;
   background-image:url(./images/kh-todos-ex.png);
+  background-color: #00000012;
+  background-blend-mode: multiply;
   width: 85vw;
   min-height: 70vh;
   background-position: 55%;
@@ -786,7 +788,12 @@ nav.menu{
 }
 .info__text--us .info__content h3{
   margin: 0;
-  transition: inset .3s .3s ease-out;
+}
+.info__text--us .info__content h3 small{
+  color: #ffffffb4;
+}
+.info__text--us .info__content:hover h3 small{
+  display:none;
 }
 
 .info__text--us .info__content p{
@@ -795,6 +802,9 @@ nav.menu{
   opacity: 0;
   max-width: 80%;
   transition: opacity .3s ease-out, max-height .5s ease-out;
+}
+.info__text--us .info__content:hover{
+  background-color: #0000006d;
 }
 
 .info__text--us .info__content:hover p,
@@ -806,7 +816,7 @@ nav.menu{
 
 .info__content__close-btn{
   position:absolute;
-  top:.1em;
+  top:0;
   left:.2em;
   border:none;
   background:none;
@@ -821,6 +831,7 @@ nav.menu{
   font-size: clamp(.8rem, 3vw, 1rem);
   margin: 0 0 1em;
   width: 100%;
+  color:white;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid;
@@ -829,10 +840,14 @@ nav.menu{
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  background-color: #ffffff87;
+  background-image: url("./images/events-bg.webp");
+  background-size: cover;
+  background-color: #00000087;
+  background-blend-mode: multiply;
 }
+
 .event-card p.card-tag {
-  background-color: grey;
+  background-color: #d951e368;
   color: white;
   margin-top: 0;
   padding: 2% 0 2% 7%;
@@ -841,13 +856,13 @@ nav.menu{
   position: relative;
   font-size: 16px;
   z-index: 99;
+  text-align: center;
 }
 .card-calendar {
   padding: 0;
 }
 .card-calendar p.card-tag {
   margin: 0%;
-  background-color: var(--card-main-clr);
   width: 100%;
   padding: 6%;
 }
@@ -858,14 +873,14 @@ nav.menu{
 }
 .card-calendar .more-concerts .card-tag {
   margin-bottom: 1em;
-  background-color: var(--card-main-clr);
+ 
   color: white;
   margin-left: 20%;
   line-height: 2.5;
   padding-left: 1.5em;
 }
 .event-card div.calendar-item:not(:last-of-type) {
-  border-bottom: 1px dotted grey;
+  border-bottom: 1px dotted var(--card-main-clr);
 }
 .calendar-item {
   padding: 6% 1%;
@@ -905,7 +920,7 @@ nav.menu{
   text-decoration: none;
 }
 .calendar-item .event-info a h3 {
-  color: black;
+  color: rgb(255, 255, 255);
   margin-top: 0;
   font-size: 1.1em;
   padding-bottom: 4px;
@@ -918,7 +933,7 @@ nav.menu{
   line-height: 1.5;
 }
 .calendar-item .event-date, .calendar-item .event-info p {
-  color: #000000d8;
+  color: #ffffffd8;
 }
 .masonry-item {
   display: inline-block;
