@@ -52,26 +52,31 @@ document.getElementById("miembros").addEventListener("click", e => {
 
 // %%%%%%%%%%%% INFO %%%%%%%%%%%%
 const infoBtns = document.querySelectorAll(".info__btn")
-const infoContents = document.querySelectorAll(".info__content")
+const infoEvents = document.querySelector(".info__text--events .info__content")
+const closeBtn = document.querySelector(".info__content__close-btn")
+
 infoBtns.forEach(btn => {
   btn.addEventListener("click",e=>{
      const content = e.target.parentElement.parentElement.parentElement.querySelector(".info__content")
-     infoContents.forEach(i=>{
-      if(i.classList.contains("open")) i.classList.remove("open")
-     })
+    if(infoEvents.classList.contains("open")) infoEvents.classList.remove("open")
      content.classList.add("open")
   })
 })
 
-infoContents.forEach(i=>{
-  i.addEventListener("click", e =>{
-    if(i.classList.contains("open")) {
-      i.classList.remove("open")
-    }
-  })
-})
+
+infoEvents.addEventListener("click", infoCloseHandler)
+closeBtn.addEventListener("click",infoCloseHandler)
 
 
+function infoCloseHandler(e){
+  if(e.target === closeBtn){
+    e.target.parentElement.classList.remove("open")
+  }else{
+  if(this.classList.contains("open")) {
+    this.classList.remove("open")
+  }
+}
+}
 
 
 // %%%%%%%%%%%%%%% BG CHANGE %%%%%%%%%%%%%%%%%

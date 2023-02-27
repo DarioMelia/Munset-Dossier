@@ -741,6 +741,7 @@ nav.menu{
   position: absolute;
   max-width: 40vw;
   border-radius: 15px;
+  font-size: clamp(.8rem, 3vw, 1rem);
   font-family: "Ubuntu", sans-serif;
   cursor:pointer;
   transform: translateY(300%);
@@ -764,24 +765,56 @@ nav.menu{
   padding: 0;
 }
 
-.info__text--us .info__content{
-  margin-left: 30px;
-  background-size: cover;
-  background-color: #ffffff87;
-  background-position: 55%;
-}
-
 .info__tittle{
   color:rgb(255, 255, 255);
   font-size: 1.2em;
   padding:.8em;
   background-color: var(--card-main-clr);
 }
-.info__text--us .info__content p{
-  font-size: 1.4rem;
+.info__text--us .info__content{
   padding: 1em;
-  color: #2d2d2d;
+  background-size: cover;
+  background-image:url(./images/kh-todos-ex.png);
+  width: 85vw;
+  min-height: 70vh;
+  background-position: 55%;
+  display:flex;
+  align-items: flex-end;
 }
+.info__text--us .wrapper{
+  max-height:50%;
+}
+.info__text--us .info__content h3{
+  margin: 0;
+  transition: inset .3s .3s ease-out;
+}
+
+.info__text--us .info__content p{
+  color: #e6e6e6;
+  max-height:0px;
+  opacity: 0;
+  max-width: 80%;
+  transition: opacity .3s ease-out, max-height .5s ease-out;
+}
+
+.info__text--us .info__content:hover p,
+.info__text--us .info__content:active p{
+  opacity: 1;
+  max-height:800px;
+  transition: opacity .5s .1s ease-in, max-height .5s ease-in;
+}
+
+.info__content__close-btn{
+  position:absolute;
+  top:.1em;
+  left:.2em;
+  border:none;
+  background:none;
+  color:white;
+  font-size: 2.5em;
+  cursor:pointer;
+}
+
 
 .event-card {
   display: inline-block;

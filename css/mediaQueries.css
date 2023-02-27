@@ -105,7 +105,9 @@
     }
     .info__text--events .info__content{
       margin-left: 0;
-      
+    }
+    .info__text--us .info__content{
+     margin-top: 65%;
     }
     .event-card{
       margin-bottom: 65%;
