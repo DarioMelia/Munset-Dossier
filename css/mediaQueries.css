@@ -239,7 +239,7 @@
 
     .square.big{
       flex: 1 0 500px;
-      filter: saturate(120%);
+      filter: saturate(102%);
       border-radius: 5px;
       background-position:center;
       z-index: 4;
@@ -254,7 +254,7 @@
   @media (hover:hover){
     .square:hover{
       flex: 1 0 500px;
-      filter: saturate(120%);
+      filter: saturate(102%);
       border-radius: 5px;
       background-position:center;
       z-index: 4;

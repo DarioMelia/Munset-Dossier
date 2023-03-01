@@ -49,6 +49,7 @@ body.color-bg div.bg--color {
 }
 body:not(.color-bg) div.bg--white {
   opacity: 1;
+  z-index:0;
 }
 
 div.bg {
@@ -60,7 +61,6 @@ div.bg {
   opacity: 0;
 }
 div.bg--white {
-  --sky-duration:5s;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -743,7 +743,7 @@ nav.menu{
   border-radius: 15px;
   font-size: clamp(.8rem, 3vw, 1rem);
   font-family: "Ubuntu", sans-serif;
-  cursor:pointer;
+  
   transform: translateY(300%);
   transition: transform 800ms 250ms cubic-bezier(.18,.42,.22,1.36),
   opacity 800ms,background-color .5s;
@@ -821,8 +821,11 @@ nav.menu{
   border:none;
   background:none;
   color:white;
-  font-size: 2.5em;
+  font-size: 2em;
   cursor:pointer;
+}
+.event-card .info__content__close-btn{
+  top:.3em;
 }
 
 
@@ -857,28 +860,20 @@ nav.menu{
   font-size: 16px;
   z-index: 99;
   text-align: center;
+  margin: 0%;
+  width: 100%;
+  padding: 1.2em;
 }
 .card-calendar {
   padding: 0;
 }
-.card-calendar p.card-tag {
-  margin: 0%;
-  width: 100%;
-  padding: 6%;
-}
+
 .card-calendar p.card-tag .fa {
   margin-right: 5%;
   text-align: center;
   float: left;
 }
-.card-calendar .more-concerts .card-tag {
-  margin-bottom: 1em;
- 
-  color: white;
-  margin-left: 20%;
-  line-height: 2.5;
-  padding-left: 1.5em;
-}
+
 .event-card div.calendar-item:not(:last-of-type) {
   border-bottom: 1px dotted var(--card-main-clr);
 }
@@ -918,6 +913,13 @@ nav.menu{
 }
 .calendar-item .event-info a{
   text-decoration: none;
+}
+.calendar-item .location{
+  color:currentColor;
+  text-decoration: none;
+}
+.calendar-item .location:hover{
+  color:white;
 }
 .calendar-item .event-info a h3 {
   color: rgb(255, 255, 255);
@@ -1167,6 +1169,25 @@ iframe.square.isScrolling{
       transform: rotateX(0deg);
   }
 }
+
+
+canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ 
+#particles-js{ 
+  position:absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index:-3;
+  background: hsla(0, 0%, 100%, 1);
+
+  background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(203, 73%, 76%, 1) 17%, hsla(206, 60%, 70%, 1) 31%, hsla(215, 61%, 63%, 1) 48%, hsla(227, 43%, 36%, 1) 100%);
+  
+  background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(203, 73%, 76%, 1) 17%, hsla(206, 60%, 70%, 1) 31%, hsla(215, 61%, 63%, 1) 48%, hsla(227, 43%, 36%, 1) 100%);
+  
+  background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(203, 73%, 76%, 1) 17%, hsla(206, 60%, 70%, 1) 31%, hsla(215, 61%, 63%, 1) 48%, hsla(227, 43%, 36%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#94CCEE", GradientType=1 );
+  
+  } 
 
 
 

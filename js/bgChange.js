@@ -10,8 +10,10 @@ window.addEventListener("load",e=>{
   setTimeout(() => {
     lsClasses.add("display-none")
   }, 500);
+  
+  
 })
-
+particlesJS.load("particles.js","./js/particlesjs-config.json")
 checkBox.addEventListener("click", e => {
   
   //checkeamos por un opverlay abierto, para solo hacer esto a partir de entonces
@@ -128,13 +130,6 @@ function setCssVar(varName, value) {
 
 function setAndResetBg(value) {
   setCssVar("--bg-img", value)
-  // bgDiv.classList.add("bg-fade-animation")
-  //         setTimeout(()=>{
-  //             setCssVar("--bg-img", value)
-  //             setTimeout(()=>{
-  //                 bgDiv.classList.remove("bg-fade-animation")
-  //             },500)
-  //         },500)
 }
 
 let timer //Es el timeout para hacer desaparecer el menu

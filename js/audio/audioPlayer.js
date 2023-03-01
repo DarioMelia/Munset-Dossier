@@ -1,7 +1,7 @@
 const playBtn = document.getElementById("play-random")
 
-const dbf = new Audio("https://github.com/DarioMelia/Munset-Dossier/blob/main/js/audio/dbf.mp3?raw=true")
-const lu = new Audio("https://github.com/DarioMelia/Munset-Dossier/blob/main/js/audio/LU.mp3?raw=true")
+const dbf = new Audio("https://soundcloud.com/munset/dead-bird-flying?si=17f2b30614984513aa59831324217bea&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing")
+const lu = new Audio("https://soundcloud.com/munset?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing")
 const audios = [dbf,lu]
 
 let isPlaying = false
