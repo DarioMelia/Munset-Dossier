@@ -7,6 +7,7 @@ const vidSquares = galeria.querySelectorAll(".square.video")
 
 const iframeHTML = [
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/z2tiQCYf9rg?autoplay=1"></iframe>`,
+  `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/OcNpLw3WmcE?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/6j1URc3EO4k?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/yRV1pow2TQk?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/AH3cARZh4OM?autoplay=1"></iframe>`,
@@ -127,7 +128,7 @@ function setScrollWheelEvent(slider) {
 }
 
 function iframeLazyLoading(e) {
-  const i = this.dataset.iframe
+  const i = this.dataset.idx
   const prevState = this.cloneNode(true)
   this.removeEventListener("click", iframeLazyLoading, false)
   this.style = ""
