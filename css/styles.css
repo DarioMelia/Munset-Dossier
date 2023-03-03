@@ -816,7 +816,7 @@ nav.menu{
 
 .info__content__close-btn{
   position:absolute;
-  top:0;
+  top:.4em;
   left:.2em;
   border:none;
   background:none;
@@ -824,10 +824,9 @@ nav.menu{
   font-size: 2em;
   cursor:pointer;
 }
-.event-card .info__content__close-btn{
-  top:.3em;
+.info__content__close-btn img{
+  width:32px;
 }
-
 
 .event-card {
   display: inline-block;
@@ -947,12 +946,14 @@ nav.menu{
                 /* GALERIA */
 /*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 
-#galeria{
+#galeria .wrapper{
   display:flex;
-  
+  height:100%;
+  width:100%;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+ 
 }
 
 #galeria .slider{
@@ -989,7 +990,7 @@ nav.menu{
   scroll-snap-align: start;
   background-size: cover !important ;
   background-position:center !important;
-  transition: border-radius 250ms ease-in-out,flex 250ms;
+  /* transition: border-radius 250ms ease-in-out,flex 250ms; */
   filter: saturate(25%);
   cursor: pointer;
   
@@ -1172,7 +1173,7 @@ iframe.square.isScrolling{
 
 
 canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ 
-#particles-js{ 
+#tsparticles{ 
   position:absolute;
   width: 100vw;
   height: 100vh;
@@ -1186,8 +1187,12 @@ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container
   background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(203, 73%, 76%, 1) 17%, hsla(206, 60%, 70%, 1) 31%, hsla(215, 61%, 63%, 1) 48%, hsla(227, 43%, 36%, 1) 100%);
   
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#94CCEE", GradientType=1 );
-  
+
   } 
+
+  body.color-bg #tsparticles{
+    display:none;
+  }
 
 
 

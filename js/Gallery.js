@@ -100,17 +100,13 @@ function deleteLastChildrenAddNew(parent, count) {
 
 
 function squaresClickHandler(e) {
-  let isBig = false;
   if (!e.target.classList.contains("video")) {
-    if (e.target.classList.contains("big")) isBig = true
-    let squaresArray = [...galeria.querySelectorAll(".square")]
-    let bigSquare = squaresArray.filter(s => s.classList.contains("big"))
-    if (bigSquare) {
-      bigSquare.forEach(s => {
-        s.classList.remove("big")
-      })
-    }
-    if (!isBig) e.target.classList.add("big")
+    let squaresArray = [...galeria.querySelectorAll("div.square")]
+    squaresArray.forEach(s=>{
+      if(s !== e.target)s.classList.contains("big")?s.classList.remove("big"):null
+    })
+     e.target.classList.toggle("big")
+    
   }
 }
 

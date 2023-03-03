@@ -28,7 +28,7 @@
     <!-- <div class="bubble-gif">
       <video  autoplay muted loop><source src="./css/images/gifBurb.webm" type="video/webm"></video>
     </div> -->
-    <div id="particles-js"></div>
+    <div id="tsparticles"></div>
   </div>
   <div class="bg bg--color">
     
@@ -154,7 +154,7 @@
                con el mundo.
             </p>
           </div>
-          <button class="info__content__close-btn">←</button>
+          <button class="info__content__close-btn"><img src="./css/images/close-icon.svg" alt="Thin cross, close button"></i></button>
                 </div>
         </div>
       <div class="info__text info__text--events">
@@ -162,7 +162,7 @@
         <div class="info__content">
           <div class="event-card card-calendar">
             <p class="card-tag">&#127771 Conciertos &#127772
-              <button class="info__content__close-btn">←</button>
+              <button class="info__content__close-btn"><img src="./css/images/close-icon.svg" alt="Thin cross, close button"></i></button>
             </p>
             
                 <div class="calendar-item masonry-item">
@@ -232,27 +232,29 @@
 
 
   <section class="section-overlay" id="galeria">
-    <div class="slider fotos">
-      <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/s-micro.webp"></div>
-      <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/d-s.webp"></div>
-      <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/a-joven.webp"></div>
-      <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/s-f.webp"></div>
-      <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/all-bn.webp"></div>
-      <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/d-f.webp"></div>
+    <div class="wrapper">
+      <div class="slider fotos">
+        <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/s-micro.webp"></div>
+        <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/d-s.webp"></div>
+        <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/a-joven.webp"></div>
+        <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/s-f.webp"></div>
+        <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/all-bn.webp"></div>
+        <div class="square" style="background-image: url('./css/images/loader.svg')" data-src="./css/images/galeria/d-f.webp"></div>
+      </div>
+      
+      <div class="slider videos">
+        <div class="square video" style="background-image: url('./css/images/thumbnail/real1.png')" data-idx="0" data-iframe=""></div>
+        <div class="square video" style="background-image: url('./css/images/thumbnail/real2.png')" data-idx="1" data-iframe=""></div>
+        <div class="square video" style="background-image: url('./css/images/thumbnail/real3.png')" data-idx="2" data-iframe=""></div>
+        <div class="square video" style="background-image: url('./css/images/thumbnail/real4.png')" data-idx="3" data-iframe=""></div>
+        <div class="square video" style="background-image: url('./css/images/thumbnail/real5.png')" data-idx="4" data-iframe=""></div>
+        <div class="square video" style="background-image: url('./css/images/thumbnail/real6.png')" data-idx="5" data-iframe=""></div>
+      
+      
+        <!-- <div class="square" style="background: url('https://picsum.photos/500/300?random=1')"></div> -->
+      
+       </div>
     </div>
-    
-    <div class="slider videos">
-      <div class="square video" style="background-image: url('./css/images/thumbnail/real1.png')" data-idx="0" data-iframe=""></div>
-      <div class="square video" style="background-image: url('./css/images/thumbnail/real2.png')" data-idx="1" data-iframe=""></div>
-      <div class="square video" style="background-image: url('./css/images/thumbnail/real3.png')" data-idx="2" data-iframe=""></div>
-      <div class="square video" style="background-image: url('./css/images/thumbnail/real4.png')" data-idx="3" data-iframe=""></div>
-      <div class="square video" style="background-image: url('./css/images/thumbnail/real5.png')" data-idx="4" data-iframe=""></div>
-      <div class="square video" style="background-image: url('./css/images/thumbnail/real6.png')" data-idx="5" data-iframe=""></div>
-      
-      
-      <!-- <div class="square" style="background: url('https://picsum.photos/500/300?random=1')"></div> -->
-      
-     </div>
 
   </section>
 
@@ -265,7 +267,7 @@
     <a href="https://www.tiktok.com/@Munset_oficial" target="_blank" class="fa-brands fa-tiktok" aria-label="link al perfil de tiktok de Munset"></a>
   </section>
 
-  <script src="./js/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
   <script src="./js/bgChange.js"></script>
   <script src="./js/Gallery.js"></script>
   <script src="./js/audio/audioPlayer.js"></script>
