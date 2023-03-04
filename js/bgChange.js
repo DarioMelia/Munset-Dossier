@@ -49,6 +49,10 @@ menuItems.forEach(item => {
     if (!document.querySelector(".section-overlay.pen")) {
       body.classList.add("color-bg")
       bgDiv.classList.add("start")
+      setTimeout(() => {
+        document.getElementById("tsparticles").remove()
+      }, 1000)
+      
     }
   })
 })

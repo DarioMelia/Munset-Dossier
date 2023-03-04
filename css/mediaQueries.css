@@ -252,6 +252,9 @@
   }
 
   @media (hover:hover){
+    .square{
+      transition: border-radius 250ms ease-in-out,flex 250ms;
+    }
     .square:hover{
       flex: 1 0 500px;
       filter: saturate(102%);

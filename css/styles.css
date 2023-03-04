@@ -990,7 +990,7 @@ nav.menu{
   scroll-snap-align: start;
   background-size: cover !important ;
   background-position:center !important;
-  /* transition: border-radius 250ms ease-in-out,flex 250ms; */
+  
   filter: saturate(25%);
   cursor: pointer;
   
@@ -1172,27 +1172,10 @@ iframe.square.isScrolling{
 }
 
 
-canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ 
-#tsparticles{ 
-  position:absolute;
-  width: 100vw;
-  height: 100vh;
-  z-index:-3;
-  background: hsla(0, 0%, 100%, 1);
 
-  background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(203, 73%, 76%, 1) 17%, hsla(206, 60%, 70%, 1) 31%, hsla(215, 61%, 63%, 1) 48%, hsla(227, 43%, 36%, 1) 100%);
-  
-  background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(203, 73%, 76%, 1) 17%, hsla(206, 60%, 70%, 1) 31%, hsla(215, 61%, 63%, 1) 48%, hsla(227, 43%, 36%, 1) 100%);
-  
-  background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(203, 73%, 76%, 1) 17%, hsla(206, 60%, 70%, 1) 31%, hsla(215, 61%, 63%, 1) 48%, hsla(227, 43%, 36%, 1) 100%);
-  
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#94CCEE", GradientType=1 );
 
-  } 
 
-  body.color-bg #tsparticles{
-    display:none;
-  }
+ 
 
 
 
