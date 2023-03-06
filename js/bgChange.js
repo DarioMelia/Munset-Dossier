@@ -7,6 +7,7 @@ window.addEventListener("popstate", historyHandler)
 window.addEventListener("load", removeLoadingScreen)
 
 
+
 tsParticles
     .loadJSON("tsparticles", "./js/particles.json")
     .then(container => {
@@ -23,11 +24,16 @@ function removeLoadingScreen(e) {
   setTimeout(() => {
     lsClasses.add("display-none")
   }, 500)
+  setTimeout(()=>{
+    if(!document.querySelector(".section-overlay.open"))checkBox.checked = "true"
+    
+  },7000)
 }
 
-function historyHandler(e) {
+function historyHandler(e) { 
   infoCloseHandler()
   miembrosCloseHandler()
+  
 }
 
 
@@ -44,16 +50,15 @@ checkBox.addEventListener("click", e => {
 
 const menuItems = document.querySelectorAll(".menu-item a")
 menuItems.forEach(item => {
-  item.addEventListener("mouseover", e => {
-    changeBg(e.target.name)
-    if (!document.querySelector(".section-overlay.pen")) {
+  item.addEventListener("click", e => {
+    if (!document.querySelector(".section-overlay.open")) {
       body.classList.add("color-bg")
       bgDiv.classList.add("start")
       setTimeout(() => {
         document.getElementById("tsparticles").remove()
       }, 1000)
-      
     }
+    changeBg(e.target.name)
   })
 })
 
@@ -117,30 +122,35 @@ function changeBg(name) {
       setAndResetBg("linear-gradient(to right, #45ffd7, #5757f4)")
       openOverlay("galeria")
       startGaleriaAnimation()
+      
       break
     case "miembros":
 
       setAndResetBg("linear-gradient(to right, #f5c842, #fa6746) ")
       openOverlay("miembros")
       startMiembrosAnimation()
+      
       break
     case "info":
 
       setAndResetBg("linear-gradient(to right, #a946fa, #fd7aff) ")
       openOverlay("info")
       startInfoAnimation()
+    
       break
     case "escuchar":
 
       setAndResetBg("linear-gradient(to right, #38e05f, #38e0ca) ")
       openOverlay("escuchar")
       startEscucharAnimation()
+
       break
     case "redes":
 
       setAndResetBg("linear-gradient(to right, #C13584, #ff1783) ")
       openOverlay("redes")
       startRedesAnimation()
+     
       break
     case "seis":
 
@@ -259,6 +269,7 @@ function resetAnimations() {
 
   // %% INFO %%
   document.querySelectorAll(".info__btn").forEach(btn => btn.style.animation = "")
+  document.querySelectorAll(".info__content.open").forEach(div => div.classList.remove("open"))
 
   // %% GALERIA %%
   sliders.forEach(s => s.style.animation = "")

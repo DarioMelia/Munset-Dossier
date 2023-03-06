@@ -209,7 +209,8 @@ nav.menu{
   position: absolute;
   transition: transform 200ms ease-in, 
               left 500ms ease-in-out, 
-              bottom 500ms ease-in-out;
+              bottom 500ms ease-in-out,
+              opacity 230ms;
   top: 0;
   right: 0;
   left:0;
@@ -225,7 +226,6 @@ nav.menu{
   bottom: calc(100% - var(--logo-size));
   transform: scale(0.6);
 }
-
 
 
 .menu-toggler {
@@ -319,6 +319,7 @@ nav.menu{
   height: var(--menu-item-size);
   opacity: 0;
   transition: 0.5s;
+  cursor:pointer;
 }
 .menu-item a {
   display: block;
