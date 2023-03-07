@@ -203,7 +203,7 @@ div.bg--color {
 }
 
 nav.menu{
-  height:0;
+ height:0;
 }
 .menu-toggler,.logo{
   position: absolute;
@@ -235,6 +235,12 @@ nav.menu{
   z-index: 2;
   opacity: 0;
   cursor: pointer;
+}
+.menu-toggler:before{
+  position:absolute;
+  inset:0;
+  background:red;
+
 }
 .logo {
   display: inline-block;

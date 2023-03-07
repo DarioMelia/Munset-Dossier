@@ -27,12 +27,17 @@ function removeLoadingScreen(e) {
   setTimeout(()=>{
     if(!document.querySelector(".section-overlay.open"))checkBox.checked = "true"
     
-  },7000)
+  },1000)
 }
 
 function historyHandler(e) { 
   infoCloseHandler()
   miembrosCloseHandler()
+  if (openOverlay) {
+    checkBox.classList.toggle("toggler-away") 
+    checkBox.checked = !checkBox.checked
+    window.history.pushState(null,null,"?q=menu")
+  }
   
 }
 
@@ -43,7 +48,11 @@ checkBox.addEventListener("click", e => {
   //checkeamos por un opverlay abierto, para solo hacer esto a partir de entonces
   const openOverlay = document.querySelector(".section-overlay.open")
   if (openOverlay) {
-    checkBox.classList.contains("toggler-away") ? checkBox.classList.remove("toggler-away") : checkBox.classList.add("toggler-away")
+    checkBox.classList.toggle("toggler-away") 
+    window.history.pushState(null,null,"?q=menu")
+    if(checkBox.checked){
+      
+    }
     
   }
 })
@@ -215,10 +224,10 @@ function startMiembrosAnimation() {
 }
 
 function startEscucharAnimation() {
-  const btn = document.getElementById("play-random")
+  // const btn = document.getElementById("play-random")
   const btnDiv = document.querySelector(".random-btn");
   const links = document.querySelectorAll(".escuchar__links__container")
-  btn.style.animation = "miembroImageAnimation 650ms  cubic-bezier(.18,.42,.22,1.36) forwards"
+  // btn.style.animation = "miembroImageAnimation 650ms  cubic-bezier(.18,.42,.22,1.36) forwards"
   btnDiv.style.animation = "float 4s infinite"
   links.forEach(l => {
     l.style.animation = "miembroImageAnimation 1s 300ms cubic-bezier(.18,.42,.22,1.36) forwards"
@@ -261,7 +270,7 @@ function resetAnimations() {
     if (mi.classList.contains("full")) mi.classList.remove("full")
   })
   // %% ESCUCHAR %%
-  document.getElementById("play-random").style.animation = ""
+  // document.getElementById("play-random").style.animation = ""
   document.querySelectorAll(".escuchar__links__container").forEach(i => i.style.animation = "")
 
   // %% REDES %%
