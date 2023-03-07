@@ -7,7 +7,6 @@ window.addEventListener("popstate", historyHandler)
 window.addEventListener("load", removeLoadingScreen)
 
 
-
 tsParticles
     .loadJSON("tsparticles", "./js/particles.json")
     .then(container => {
@@ -26,30 +25,51 @@ function removeLoadingScreen(e) {
   }, 500)
   setTimeout(()=>{
     if(!document.querySelector(".section-overlay.open"))checkBox.checked = "true"
-    
   },1000)
 }
 
+let backCounter = 0
+let historyBackTimer 
 function historyHandler(e) { 
-  infoCloseHandler()
-  miembrosCloseHandler()
-  if (openOverlay) {
+ 
+  if (document.querySelector(".section-overlay.open") && allPopUpsClosed()) {
     checkBox.classList.toggle("toggler-away") 
     checkBox.checked = !checkBox.checked
     window.history.pushState(null,null,"?q=menu")
   }
+  if(backCounter === 0){
+    historyBackTimer = setTimeout(()=>{
+      if(backCounter >= 3) {
+        const exit = confirm("¿Desea salir de la página?")
+        exit?
+        window.location = "https://www.google.com/":null
+      }
+      backCounter = 0
+    },1500)
+  }
+  backCounter += 1
   
+  infoCloseHandler()
+  miembrosCloseHandler()
 }
 
-
+function allPopUpsClosed(){
+  const openMiembro = document.querySelector(".miembro.full")
+  const openInfo = document.querySelector(".info__content.open")
+  
+  console.log('openInfo', openInfo)
+  console.log('openMiembro', openMiembro)
+  console.log('!(openMiembro || openInfo)', !(openMiembro || openInfo))
+  
+  return !(openMiembro || openInfo)
+}
 
 checkBox.addEventListener("click", e => {
-
+  window.history.pushState(null,null,"?q=menu")
   //checkeamos por un opverlay abierto, para solo hacer esto a partir de entonces
   const openOverlay = document.querySelector(".section-overlay.open")
   if (openOverlay) {
     checkBox.classList.toggle("toggler-away") 
-    window.history.pushState(null,null,"?q=menu")
     if(checkBox.checked){
       
     }
@@ -224,11 +244,13 @@ function startMiembrosAnimation() {
 }
 
 function startEscucharAnimation() {
+  const spfIframeHtml = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/4xTfBlNSKGj1WVOpPNURMe?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
   // const btn = document.getElementById("play-random")
-  const btnDiv = document.querySelector(".random-btn");
+  const btnDiv = document.querySelector(".spf-player");
   const links = document.querySelectorAll(".escuchar__links__container")
   // btn.style.animation = "miembroImageAnimation 650ms  cubic-bezier(.18,.42,.22,1.36) forwards"
-  btnDiv.style.animation = "float 4s infinite"
+  btnDiv.innerHTML = spfIframeHtml
+  btnDiv.firstChild.style.animation = "float 4s infinite"
   links.forEach(l => {
     l.style.animation = "miembroImageAnimation 1s 300ms cubic-bezier(.18,.42,.22,1.36) forwards"
   })
