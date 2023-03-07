@@ -7,9 +7,6 @@ window.addEventListener("popstate", historyHandler)
 window.addEventListener("load", loadHandler)
 
 
-
-
-
 function loadHandler(e) {
   //Remove loading screen
   const lsClasses = document.querySelector(".loading-screen").classList
@@ -229,7 +226,6 @@ function closeOpenOverlay() {
 }
 
 
-
 // %%%%%%%% ANIMATIONS %%%%%%%%
 function startMiembrosAnimation() {
   const miembros = document.querySelectorAll(".miembro")
@@ -243,7 +239,6 @@ function startMiembrosAnimation() {
     delay += 0.3
     floatDelay += 1.2
   })
-
 }
 
 function startEscucharAnimation() {
