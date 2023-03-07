@@ -285,8 +285,15 @@ function startGaleriaAnimation() {
   squares.forEach(sq => {
     sq.style.background = `url(${sq.getAttribute("data-src")})`
   })
-
-  videos.forEach((v,i)=>v.style=`background-image: url("./css/images/thumbnail/real${i+1}.webp")`)
+  let limit = 5
+  videos.forEach((v,i)=>{
+    if(i<=limit){
+      v.style=`background-image: url("./css/images/thumbnail/real${i+1}.webp")`
+    }else{
+      v.style=`background-image: url("./css/images/thumbnail/real${i -limit}.webp")`
+    }
+    
+  })
 }
 
 function resetAnimations() {
