@@ -74,8 +74,8 @@
     }
      
     /* %% ESCUCHAR %% */
-    .random-btn{
-      top:8vh;
+    .spf-player{
+      top:22vh;
     }
     .escuchar__links{
       align-self: flex-end;

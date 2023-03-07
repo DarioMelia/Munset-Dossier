@@ -505,66 +505,12 @@ nav.menu{
   display: flex;
   justify-content: center;
 }
-.random-btn {
+.spf-player {
   font-size: clamp(2rem, 7vw, 4rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: absolute;
   top: 13vh;
-  border-radius: 50%;
-}
-
-#play-random {
-  color: white;
-  border: none;
-  padding: 0;
-  background: none;
-  display: inline-block;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  cursor:pointer;
-  opacity: 0;
-  transform: translateY(120%) scale(0.5);
-}
-
-#play-random.playing{
-  box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF,
-   0 0 20px #fff018, 0 0 30px #ffff18, 0 0 40px #dcff18, 0 0 55px #ffd118,
-   0 0 75px #49ff18;
-   border-radius: 50%;
-}
-
-#play-random .triangle {
-  -webkit-transition: all 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
-  stroke-dasharray: 240;
-  stroke-dashoffset: 480;
-  stroke: #000;
-  transform: translateY(0);
-}
-
-#play-random.playing .triangle {
-  stroke-dashoffset: 0;
-  opacity: 1;
-  stroke: white;
-  animation: nudge 0.7s ease-in-out;
-}
-
-#play-random.playing .circle {
-  stroke-dashoffset: 0;
-  opacity: 1;
-  
-}
-
-.circle {
-  stroke: white;
-  stroke-dasharray: 720;
-  stroke-dashoffset: 720;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  opacity: 0.3;
-  
+  max-width: 90vw;
+  border-radius: 8px;
 }
 
 .escuchar__links{
