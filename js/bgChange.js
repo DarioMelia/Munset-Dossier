@@ -4,28 +4,34 @@ const logo = checkBox.nextElementSibling
 const bgDiv = document.querySelector(".bg--color")
 
 window.addEventListener("popstate", historyHandler)
-window.addEventListener("load", removeLoadingScreen)
+window.addEventListener("load", loadHandler)
 
 
-tsParticles
-    .loadJSON("tsparticles", "./js/particles.json")
-    .then(container => {
-        console.log("callback - tsparticles config loaded");
-    })
-    .catch(error => {
-        console.error(error);
-    });
 
 
-function removeLoadingScreen(e) {
+
+function loadHandler(e) {
+  //Remove loading screen
   const lsClasses = document.querySelector(".loading-screen").classList
   lsClasses.add("low-opacity")
   setTimeout(() => {
     lsClasses.add("display-none")
   }, 500)
+
+  // Open menu
   setTimeout(()=>{
     if(!document.querySelector(".section-overlay.open"))checkBox.checked = "true"
   },1000)
+
+  //tsParticles
+  tsParticles
+  .loadJSON("tsparticles", "./js/particles.json")
+  .then(container => {
+      console.log("callback - tsparticles config loaded")
+  })
+  .catch(error => {
+      console.error(error)
+  })
 }
 
 let backCounter = 0
@@ -57,19 +63,16 @@ function allPopUpsClosed(){
   const openMiembro = document.querySelector(".miembro.full")
   const openInfo = document.querySelector(".info__content.open")
   
-  console.log('openInfo', openInfo)
-  console.log('openMiembro', openMiembro)
-  console.log('!(openMiembro || openInfo)', !(openMiembro || openInfo))
-  
   return !(openMiembro || openInfo)
 }
 
 checkBox.addEventListener("click", e => {
-  window.history.pushState(null,null,"?q=menu")
+  
   //checkeamos por un opverlay abierto, para solo hacer esto a partir de entonces
   const openOverlay = document.querySelector(".section-overlay.open")
   if (openOverlay) {
     checkBox.classList.toggle("toggler-away") 
+    window.history.pushState(null,null,"?q=menu")
     if(checkBox.checked){
       
     }
@@ -151,35 +154,35 @@ function changeBg(name) {
       setAndResetBg("linear-gradient(to right, #45ffd7, #5757f4)")
       openOverlay("galeria")
       startGaleriaAnimation()
-      
+      window.history.pushState(null,null,"?q=galeria")
       break
     case "miembros":
 
       setAndResetBg("linear-gradient(to right, #f5c842, #fa6746) ")
       openOverlay("miembros")
       startMiembrosAnimation()
-      
+      window.history.pushState(null,null,"?q=miembros")
       break
     case "info":
 
       setAndResetBg("linear-gradient(to right, #a946fa, #fd7aff) ")
       openOverlay("info")
       startInfoAnimation()
-    
+      window.history.pushState(null,null,"?q=info")
       break
     case "escuchar":
 
       setAndResetBg("linear-gradient(to right, #38e05f, #38e0ca) ")
       openOverlay("escuchar")
       startEscucharAnimation()
-
+      window.history.pushState(null,null,"?q=escuchar")
       break
     case "redes":
 
       setAndResetBg("linear-gradient(to right, #C13584, #ff1783) ")
       openOverlay("redes")
       startRedesAnimation()
-     
+      window.history.pushState(null,null,"?q=redes")
       break
     case "seis":
 
@@ -273,6 +276,7 @@ function startInfoAnimation() {
 function startGaleriaAnimation() {
   const sliders = document.querySelectorAll(".slider")
   const squares = document.querySelectorAll(".slider.fotos .square")
+  const videos = document.querySelectorAll(".square.video")
   sliders.forEach(s => {
 
     s.style.animation = "miembroImageAnimation 1.2s cubic-bezier(.18,.42,.22,1.36) forwards"
@@ -281,6 +285,8 @@ function startGaleriaAnimation() {
   squares.forEach(sq => {
     sq.style.background = `url(${sq.getAttribute("data-src")})`
   })
+
+  videos.forEach((v,i)=>v.style=`background-image: url("./css/images/thumbnail/real${i+1}.webp")`)
 }
 
 function resetAnimations() {
