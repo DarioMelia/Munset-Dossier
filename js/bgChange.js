@@ -22,7 +22,7 @@ function loadHandler(e) {
 
   //tsParticles
   tsParticles
-  .loadJSON("tsparticles", "./js/particles.json")
+  .loadJSON("tsparticles", "./particles.json")
   .then(container => {
       console.log("callback - tsparticles config loaded")
   })

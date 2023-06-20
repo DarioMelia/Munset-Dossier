@@ -16,15 +16,7 @@ const iframeHTML = [
 vidSquares.forEach((vid,i)=>vid.dataset.iframe = iframeHTML[i])
 // sliders[1].scrollLeft = sliders[1].scrollWidth //llevar el slider de fotos al final
 
-galeria.addEventListener("click", e => {
-  if (!e.target.classList.contains("square")) {
-    let squaresArray = [...galeria.querySelectorAll(".square")]
-    let bigSquare = squaresArray.filter(s => s.classList.contains("big"))
-    bigSquare[0] ? bigSquare[0].classList.remove("big") : null
-  }
-})
-
-
+galeria.addEventListener("click", closeBigSquare)
 
 sliders.forEach(slider => {
   const childrenCount = slider.children.length
@@ -37,13 +29,7 @@ sliders.forEach(slider => {
       console.log("Llegaste al final")
       deleteFirstChildrenAddNew(e.target, childrenCount)
       e.target.scrollLeft = 0
-    } else if (e.target.scrollLeft <= 0) {
-      //   console.log("llegaste al principio")
-      //   deleteLastChildrenAddNew(e.target,childrenCount)
-      //   e.target.scrollLeft = e.target.scrollWidth
-
-    }
-
+    } 
   }, { passive: true })
 })
 
@@ -73,7 +59,6 @@ function cloneAndApendChildren(parent, count, atEnd) {
     }
   })
 
-
 }
 
 function deleteFirstChildrenAddNew(parent, count) {
@@ -97,8 +82,6 @@ function deleteLastChildrenAddNew(parent, count) {
 }
 
 
-
-
 function squaresClickHandler(e) {
   if (!e.target.classList.contains("video")) {
     let squaresArray = [...galeria.querySelectorAll("div.square")]
@@ -106,7 +89,13 @@ function squaresClickHandler(e) {
       if(s !== e.target)s.classList.contains("big")?s.classList.remove("big"):null
     })
      e.target.classList.toggle("big")
-    
+  }
+}
+
+function closeBigSquare(e){
+  if (!e.target.classList.contains("square")) {
+    let bigSquare = galeria.querySelector(".square.big")
+    if(bigSquare)bigSquare.classList.remove("big")
   }
 }
 
@@ -140,10 +129,6 @@ function mouseLeaveHandler(e, prev, i) {
     const newNodes = document.querySelectorAll(`.square[data-idx="${i}"]`)
     newNodes.forEach(node=>node.addEventListener("click", iframeLazyLoading))
   }, 200)
-
-
-
-
 }
 
 
