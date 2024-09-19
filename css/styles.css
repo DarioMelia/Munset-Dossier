@@ -27,11 +27,11 @@
 
 @font-face {
   font-family: EfcoBrookshire;
-  src: url("/css/fonts/EFCO\ Brookshire\ Regular.ttf");
+  src: url("fonts/EFCO\ Brookshire\ Regular.ttf");
 }
 @font-face{
   font-family: AoboshiOne;
-  src: url("/css/fonts/AoboshiOne-Regular.ttf");
+  src: url("fonts/AoboshiOne-Regular.ttf");
 }
 
 
