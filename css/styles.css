@@ -22,8 +22,19 @@
 
   --info-btn-width: 180px;
   --info-btn-height: 57px;
-  --info-btn-fs: 1.8rem;
+  --info-btn-fs: 2.4rem;
 }
+
+@font-face {
+  font-family: EfcoBrookshire;
+  src: url("/css/fonts/EFCO\ Brookshire\ Regular.ttf");
+}
+@font-face{
+  font-family: AoboshiOne;
+  src: url("/css/fonts/AoboshiOne-Regular.ttf");
+}
+
+
 html {
   height: 100%;
 }
@@ -68,7 +79,7 @@ div.bg--white {
 }
 
 .title {
-  width: 80vw;
+  
   max-width: 1100px;
   margin-bottom: 25rem;
 }
@@ -81,6 +92,13 @@ div.bg--white {
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+.title h1 {
+  font-family: EfcoBrookshire;
+  color: #D9D9D9;
+  font-size: 25vw;
+  letter-spacing: .2rem;
 }
 
 .bubble-gif {
@@ -233,7 +251,6 @@ nav.menu {
 }
 .logo {
   display: inline-block;
-  padding: 8px;
   width: var(--logo-size);
   height: var(--logo-size);
   background-color: white;
@@ -402,12 +419,12 @@ body.color-bg .menu-toggler:checked ~ ul .menu-item{
   letter-spacing: 2px;
   text-shadow: 3px 3px 3px rgba(36, 36, 36, 0.83);
 }
-.miembro.celia h3,
+.miembro.dani h3,
 .miembro.sara h3 {
   top: -1.6em;
   white-space: nowrap;
 }
-.miembro.celia {
+.miembro.dani {
   grid-column: 5 / span 4;
   grid-row: 4 / span 4;
   transform: translate(70%, 45%) scale(0.5);
@@ -427,7 +444,7 @@ body.color-bg .menu-toggler:checked ~ ul .menu-item{
   grid-row: 7 / span 4;
   transform: translate(70%, -45%) scale(0.5);
 }
-.miembro.jaime {
+.miembro.jorge {
   grid-column: 7 / span 5;
   grid-row: 11 / span 5;
   transform: translate(-20%, -45%) scale(0.5);
@@ -611,44 +628,29 @@ body.color-bg .menu-toggler:checked ~ ul .menu-item{
 }
 
 .info__btn {
+  animation: glow 3s infinite !important;
   font-size: var(--info-btn-fs);
-  font-family: "Ubuntu", sans-serif;
+  font-family: EfcoBrookshire;
+  text-transform: lowercase;
   font-weight: 600;
-  text-shadow: 2px 2px 2px rgba(40, 40, 40, 0.7);
+  text-shadow: 2px 2px 2px rgba(40, 40, 40, 0.459);
   color: white;
   cursor: pointer;
   position: absolute;
-  background: none;
-  border: none;
+  background-color: #00000042;
+  backdrop-filter: blur(9px);
+  border-radius: 50%;
+  border:none;
   width: var(--info-btn-width);
+  height: var(--info-btn-width);
   padding: 0.3em 0.7em;
   transition: text-shadow 400ms ease-out, transform 800ms ease-in;
-  opacity: 0;
+  opacity: 1;
+  
 }
 
 .info__btn:hover {
   text-shadow: 4px 4px 2px rgba(40, 40, 40, 0.7);
-}
-.info__btn svg,
-.info__btn svg rect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  fill: transparent;
-}
-.info__btn svg rect {
-  stroke: #00e2ff;
-  stroke-width: 8;
-  transition: 1s;
-  stroke-dasharray: var(--info-btn-height) var(--info-btn-width);
-  stroke-dashoffset: 320;
-}
-.info__btn:hover svg rect {
-  stroke: #ff0;
-  stroke-dasharray: var(--info-btn-width) var(--info-btn-height);
-  stroke-dashoffset: 0;
 }
 
 .info__content {
@@ -659,7 +661,7 @@ body.color-bg .menu-toggler:checked ~ ul .menu-item{
   max-width: 40vw;
   border-radius: 15px;
   font-size: clamp(0.8rem, 3vw, 1rem);
-  font-family: "Ubuntu", sans-serif;
+  font-family: AoboshiOne;
 
   transform: translateY(300%);
   transition: transform 800ms 250ms cubic-bezier(0.18, 0.42, 0.22, 1.36),
@@ -991,27 +993,6 @@ iframe.square.isScrolling {
   }
 }
 
-@keyframes infoBtnAnimation {
-  0% {
-    stroke-dasharray: var(--info-btn-height) var(--info-btn-width);
-    stroke-dashoffset: 320;
-  }
-
-  33% {
-    stroke-dasharray: var(--info-btn-height) var(--info-btn-width);
-    stroke-dashoffset: 320;
-  }
-
-  66% {
-    stroke-dasharray: var(--info-btn-width) var(--info-btn-height);
-    stroke-dashoffset: 0;
-  }
-
-  100% {
-    stroke-dasharray: var(--info-btn-height) var(--info-btn-width);
-    stroke-dashoffset: 320;
-  }
-}
 
 @keyframes pulse {
   0% {
@@ -1075,5 +1056,17 @@ iframe.square.isScrolling {
   100% {
     opacity: 1;
     transform: rotateX(0deg);
+  }
+}
+
+@keyframes glow {
+  0%{
+  box-shadow: 5px 5px 20px rgb(93, 52, 168),-5px -5px 20px rgb(93, 52, 168);}
+  
+  50%{
+  box-shadow: 5px 5px 20px rgb(81, 224, 210),-5px -5px 20px rgb(81, 224, 210)
+  }
+  100%{
+  box-shadow: 5px 5px 20px rgb(93, 52, 168),-5px -5px 20px rgb(93, 52, 168)
   }
 }

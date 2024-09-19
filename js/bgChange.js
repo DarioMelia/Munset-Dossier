@@ -18,7 +18,7 @@ function loadHandler(e) {
   // Open menu
   setTimeout(()=>{
     if(!document.querySelector(".section-overlay.open"))checkBox.checked = "true"
-  },1000)
+  },2500)
 
   //tsParticles
   tsParticles
@@ -119,7 +119,7 @@ const closeBtns = document.querySelectorAll(".info__content__close-btn")
 
 infoBtns.forEach((btn, i) => {
   btn.addEventListener("click", e => {
-    const content = e.target.parentElement.parentElement.parentElement.querySelector(".info__content")
+    const content = e.target.parentElement.querySelector(".info__content")
     content.classList.add("open")
 
     if (i === 0) {
