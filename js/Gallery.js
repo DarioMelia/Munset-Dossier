@@ -6,11 +6,11 @@ const squares = galeria.querySelectorAll(".square")
 const vidSquares = galeria.querySelectorAll(".square.video")
 
 const iframeHTML = [
+  `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/b_DgNe9rwfU?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/z2tiQCYf9rg?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/OcNpLw3WmcE?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/6j1URc3EO4k?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/yRV1pow2TQk?autoplay=1"></iframe>`,
-  `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/AH3cARZh4OM?autoplay=1"></iframe>`,
   `<iframe class="square" allow="autoplay" allowfullscreen="true" frameborder="0" scrolling="no" src="https://www.youtube.com/embed/LstgEDrQnE4?autoplay=1"></iframe>`]
 
 vidSquares.forEach((vid,i)=>vid.dataset.iframe = iframeHTML[i])
