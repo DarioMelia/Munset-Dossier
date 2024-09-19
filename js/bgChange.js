@@ -148,21 +148,21 @@ function changeBg(name) {
   switch (name) {
     case "galeria":
 
-      setAndResetBg("linear-gradient(to right, #45ffd7, #5757f4)")
+      setAndResetBg("linear-gradient(to right, #5CE8E1, #5CE8E1)")
       openOverlay("galeria")
       startGaleriaAnimation()
       window.history.pushState(null,null,"?q=galeria")
       break
     case "miembros":
 
-      setAndResetBg("linear-gradient(to right, #f5c842, #fa6746) ")
+      setAndResetBg("linear-gradient(to right, #D4822E, #D4822E) ")
       openOverlay("miembros")
       startMiembrosAnimation()
       window.history.pushState(null,null,"?q=miembros")
       break
     case "info":
 
-      setAndResetBg("linear-gradient(to right, #a946fa, #fd7aff) ")
+      setAndResetBg("linear-gradient(to right, #322134, #a946fa) ")
       openOverlay("info")
       startInfoAnimation()
       window.history.pushState(null,null,"?q=info")

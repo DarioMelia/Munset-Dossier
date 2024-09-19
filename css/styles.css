@@ -33,6 +33,10 @@
   font-family: AoboshiOne;
   src: url("fonts/AoboshiOne-Regular.ttf");
 }
+@font-face{
+  font-family: Bangers;
+  src: url("fonts/Bangers-Regular.ttf");
+}
 
 
 html {
@@ -82,7 +86,7 @@ div.bg--white {
   display:flex;
   align-items: center;
   max-width: 1100px;
-  margin-bottom: 25rem;
+  margin-bottom: 60vh;
 }
 
 .title h1 {
@@ -291,15 +295,15 @@ body.color-bg .menu-toggler:checked ~ ul .menu-item{
 }
 .menu-item:nth-child(3) a {
   transform: rotate(-162deg);
-  background: linear-gradient(to right, #45ffd7f9, #5757f4f3);
+  background: linear-gradient(to right, #5CE8E1, #5CE8E1);
 }
 .menu-item:nth-child(4) a {
   transform: rotate(-234deg);
-  background: linear-gradient(to right, #f5c842f4, #fa6746f3);
+  background: linear-gradient(to right, #D4822E, #fa6746f3);
 }
 .menu-item:nth-child(5) a {
   transform: rotate(-306deg);
-  background: linear-gradient(to right, #a946faf8, #fd7afff4);
+  background: linear-gradient(to right, #a946faf8, #322134);
 }
 /* .menu-item:nth-child(6) a {
   transform: rotate(-300deg);
@@ -404,7 +408,7 @@ body.color-bg .menu-toggler:checked ~ ul .menu-item{
 
 .miembro h3 {
   position: absolute;
-  font-family: "Bangers", sans-serif;
+  font-family: Bangers;
   color: white;
   font-size: clamp(1rem, 3vw, 2.3rem);
   text-align: center;
