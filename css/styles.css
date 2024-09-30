@@ -27,15 +27,15 @@
 
 @font-face {
   font-family: EfcoBrookshire;
-  src: url("fonts/EFCO\ Brookshire\ Regular.ttf");
+  src: url("fonts/EFCO\ Brookshire\ Regular.woff2") format("woff2");
 }
 @font-face{
   font-family: AoboshiOne;
-  src: url("fonts/AoboshiOne-Regular.ttf");
+  src: url("fonts/AoboshiOne-Regular.woff2") format("woff2");
 }
 @font-face{
   font-family: Bangers;
-  src: url("fonts/Bangers-Regular.ttf");
+  src: url("fonts/Bangers-Regular.woff2") format("woff2");
 }
 
 
@@ -94,18 +94,6 @@ div.bg--white {
   color: #D9D9D9;
   font-size: 25vw;
   letter-spacing: .2rem;
-}
-
-.bubble-gif {
-  z-index: -1;
-  width: calc(var(--logo-size) * 2);
-  height: calc(var(--logo-size) * 2);
-  position: absolute;
-  margin: 0 auto;
-}
-.bubble-gif video {
-  width: calc(var(--logo-size) * 2);
-  height: calc(var(--logo-size) * 2);
 }
 
 div.bg--color {

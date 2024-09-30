@@ -18,7 +18,7 @@ function loadHandler(e) {
   // Open menu
   setTimeout(()=>{
     if(!document.querySelector(".section-overlay.open"))checkBox.checked = "true"
-  },2500)
+  },4000)
 
   //tsParticles
   tsParticles
